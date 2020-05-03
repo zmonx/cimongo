@@ -16,11 +16,12 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/categories.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/categories_responsive.css') ?>">
 
-    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart_responsive.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/contact.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/contact_responsive.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/contact_responsive.css') ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/responsive.css') ?>">
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/main_styles.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/responsive.css')?>">
 </head>
