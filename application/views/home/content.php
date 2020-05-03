@@ -1,3 +1,5 @@
+<!-- Home -->
+
 <div class="home">
 		<div class="home_slider_container">
 			
@@ -77,5 +79,11 @@
 					</div>
 				</div>	
 			</div>
+
 		</div>
 	</div>
+
+	<!-- End Home -->
+
+
+

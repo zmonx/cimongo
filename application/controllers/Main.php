@@ -27,12 +27,13 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$data['categories'] = $this->categories_model->findAll();
-		$this->load->view('layout/head', $data);
+		$this->load->view('layout/head');
 		$this->load->view('layout/header');
 		$this->load->view('layout/menu');
-		$this->load->view('layout/home');
-		$this->load->view('layout/content');
+		$this->load->view('home/content');
+		$this->load->view('home/ads');
+		$this->load->view('home/rec');
+		$this->load->view('home/support');
 		$this->load->view('layout/footer');
-	
 	}
 }

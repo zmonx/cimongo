@@ -23,8 +23,9 @@
 												<?php } ?>
 											</ul>
 										</li>
-										<li><a href="warranty.php">Warranty</a></li>
+										<li><a href="<?php echo base_url('warranty/') ?>">Warranty</a></li>
 										<li><a href="<?php echo base_url('contact/') ?>">Contact</a></li>
+										
 									</ul>
 								</nav>
 								<div class="header_extra ml-auto">

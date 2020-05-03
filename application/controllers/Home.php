@@ -17,7 +17,7 @@ class Home extends CI_Controller {
 		// $data['products'] = $this->product_model->findAll($condition);
 		// print_r($data['products']);
 		// exit();
-		$this->load->view('layout/head', $data);
+		$this->load->view('layout/head');
 		$this->load->view('layout/header');
 		$this->load->view('layout/menu');
 		$this->load->view('home/content');
