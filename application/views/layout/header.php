@@ -19,9 +19,13 @@
 											<a href="<?php echo base_url('categories/1') ?>">Categories</a>
 											<ul>
 												<?php foreach ($categories as $row) { ?>
-													<li><a href="<?php echo base_url('categories/' . $row['categories_id']) ?>"><?php echo $row['categories_name'] ?></a></li>
-												<?php } ?>
+													<li><a href="<?php echo base_url('categories/'. $row['categories_id']) ?>"><?php echo $row['categories_name'] ?></a></li>
+												<?php }  ?>
 											</ul>
+
+											
+
+
 										</li>
 										<li><a href="<?php echo base_url('warranty/') ?>">Warranty</a></li>
 										<li><a href="<?php echo base_url('contact/') ?>">Contact</a></li>

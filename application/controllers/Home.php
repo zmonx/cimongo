@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 		// print_r($data['products']);
 		// exit();
 		$this->load->view('layout/head');
-		$this->load->view('layout/header');
+		$this->load->view('layout/header', $data);
 		$this->load->view('layout/menu');
 		$this->load->view('home/content');
 		$this->load->view('home/ads');

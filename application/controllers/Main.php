@@ -28,7 +28,7 @@ class Main extends CI_Controller {
 	{
 		$data['categories'] = $this->categories_model->findAll();
 		$this->load->view('layout/head');
-		$this->load->view('layout/header');
+		$this->load->view('layout/header', $data);
 		$this->load->view('layout/menu');
 		$this->load->view('home/content');
 		$this->load->view('home/ads');
