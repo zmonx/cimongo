@@ -22,6 +22,7 @@ class Categories extends CI_Controller {
 		$this->load->view('layout/menu');
 		// $this->load->view('layout/home');
 		$this->load->view('categories/content');
+		$this->load->view('layout/support');
 		$this->load->view('layout/footer');
 	
 	}

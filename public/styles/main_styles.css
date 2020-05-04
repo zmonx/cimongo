@@ -1078,7 +1078,7 @@ section
 {
 	width: 100%;
 	background: #FFFFFF;
-	padding-top: 99px;
+	/* padding-top:20px; */
 	z-index: 2;
 }
 .product
