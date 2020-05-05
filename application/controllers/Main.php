@@ -27,6 +27,7 @@ class Main extends CI_Controller {
     }  
 	public function index()
 	{
+		//55
 		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
 		$this->load->view('layout/head');
