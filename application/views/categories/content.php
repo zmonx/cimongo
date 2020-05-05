@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/contact.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/categories.css') ?>">
 
-<div class="้home">
+<!-- <div class="้home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url('public/images/contact.jpg')?>)"></div>
         <div class="home_content_container">
@@ -20,7 +20,25 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<div class="home">
+		<div class="home_container">
+			<div class="home_background" style="background-image:url(<?php echo base_url('public/images/categories.jpg')?>)"></div>
+			<div class="home_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="home_title">Smart Phones<span> .</span></div>
+								<div class="home_text"><p> mobile phone with highly advanced features.  A typical smartphone has a high-resolution touch screen display, WiFi connectivity, Web browsing capabilities, and the ability to accept sophisticated applications.</p></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <div class="products">
 	<div class="container">
 		<div class="row">
