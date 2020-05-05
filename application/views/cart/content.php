@@ -132,6 +132,7 @@
                 <div class="cart_total">
                     <div class="section_title">Cart total</div>
                     <div class="section_subtitle">Final info</div>
+                    <?php $shipPrice = 0;?>
                     <div class="cart_total_container">
                         <ul>
                             <li class="d-flex flex-row align-items-center justify-content-start">

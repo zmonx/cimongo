@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/contact.css') ?>">
 
-<div class="categories">
+<div class="้home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url('public/images/contact.jpg')?>)"></div>
         <div class="home_content_container">

@@ -22,10 +22,12 @@ class Main extends CI_Controller {
 	function __construct()
     {
 	 	parent::__construct();
-	 	$this->load->model('categories_model');
+		 $this->load->model('categories_model');
+		 $this->load->model('cart_model');
     }  
 	public function index()
 	{
+		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
 		$this->load->view('layout/head');
 		$this->load->view('layout/header', $data);
