@@ -12,7 +12,7 @@
 								<div class="logo"><a href="<?php echo base_url('home')?>">EAZY!T</a></div>
 								<nav class="main_nav">
 									<ul>
-										<li class="hassubs active">
+										<li class="">
 											<a href="<?php echo base_url('home')?>">Home</a>
 										</li>
 										<li class="hassubs">
@@ -22,10 +22,6 @@
 													<li><a href="<?php echo base_url('categories/'. $row['categories_id']) ?>"><?php echo $row['categories_name'] ?></a></li>
 												<?php }  ?>
 											</ul>
-
-											
-
-
 										</li>
 										<li><a href="<?php echo base_url('warranty/') ?>">Warranty</a></li>
 										<li><a href="<?php echo base_url('contact/') ?>">Contact</a></li>
