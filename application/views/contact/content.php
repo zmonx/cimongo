@@ -33,29 +33,32 @@
 						<div class="section_title">Get in Touch</div>
 						<div class="section_subtitle">Say hello</div>
 						<div class="contact_form_container">
-							<form action="#" id="contact_form" class="contact_form">
+
+						<form method="post" action="<?php echo base_url('contact/save');?>">
 								<div class="row">
 									<div class="col-xl-6">
 										<!-- Name -->
 										<label for="contact_name">First Name*</label>
-										<input type="text" id="contact_name" class="contact_input" required="required">
+										<input type="text" name="firstName" class="contact_input" required>
 									</div>
 									<div class="col-xl-6 last_name_col">
 										<!-- Last Name -->
 										<label for="contact_last_name">Last Name*</label>
-										<input type="text" id="contact_last_name" class="contact_input" required="required">
+										<input type="text" name="lastName" class="contact_input" required>
 									</div>
 								</div>
 								<div>
 									<!-- Subject -->
 									<label for="contact_company">Subject</label>
-									<input type="text" id="contact_company" class="contact_input">
+									<input type="text" name="subject" class="contact_input">
 								</div>
 								<div>
 									<label for="contact_textarea">Message*</label>
-									<textarea id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
+									<textarea name="message" class="contact_input contact_textarea" required></textarea>
 								</div>
-								<button class="button contact_button"><span>Send Message</span></button>
+								<button  type="submit" class="button contact_button"><span>Send Message</span></button>
+								<!-- <p class="text-center"><button type="submit" class="btn btn-success"><i class="far fa-save"></i>  บันทึก</button></p> -->
+
 							</form>
 						</div>
 					</div>
@@ -67,22 +70,22 @@
 						<div class="contact_info_section">
 							<div class="contact_info_title">Marketing</div>
 							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
+								<li>Phone : <span>02-666-0097</span></li>
+								<li>Email : <span>eazyit_market@gmail.com</span></li>
 							</ul>
 						</div>
 						<div class="contact_info_section">
 							<div class="contact_info_title">Shippiing & Returns</div>
 							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
+								<li>Phone : <span>02-666-0098</span></li>
+								<li>Email : <span>eazyit_shipping@gmail.com</span></li>
 							</ul>
 						</div>
 						<div class="contact_info_section">
 							<div class="contact_info_title">Information</div>
 							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
+								<li>Phone : <span>02-666-0099</span></li>
+								<li>Email : <span>eazyit_info@gmail.com</span></li>
 							</ul>
 						</div>
 					</div>
