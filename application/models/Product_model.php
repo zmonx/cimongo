@@ -19,4 +19,9 @@ class Product_model extends CI_Model{
         $insertId = $this->mongo_db->insert('products', $data);
         return $insertId;
     }
+    public function findAllItem()
+    {
+        $result = $this->mongo_db->get('products');
+        return $result;
+    }
 }

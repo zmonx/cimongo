@@ -16,7 +16,7 @@
 											<a href="<?php echo base_url('home')?>">Home</a>
 										</li>
 										<li class="hassubs">
-											<a href="<?php echo base_url('categories/1') ?>">Categories</a>
+											<a href="<?php echo base_url('categories/all') ?>">Categories</a>
 											<ul>
 												<?php foreach ($categories as $row) { ?>
 													<li><a href="<?php echo base_url('categories/'. $row['categories_id']) ?>"><?php echo $row['categories_name'] ?></a></li>
@@ -98,4 +98,5 @@
 					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
+			
 		</header>

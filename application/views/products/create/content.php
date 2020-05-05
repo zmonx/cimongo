@@ -1,5 +1,14 @@
 <div class="products">
     <div class="container">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
         <h2>สร้างสินค้า</h2>
         <hr>
         <form method="post" action="<?php echo base_url('products/save');?>">
@@ -37,8 +46,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label>ร้านที่ขาย</label><span class="text-danger">*</span>
-                        <input type="text" name="product_vendor" class="form-control" placeholder="ร้านที่ขาย" required>
+                        <label>คำอธิบายสินค้า</label><span class="text-danger">*</span>
+                        <input type="text" name="description" class="form-control" placeholder="คำอธิบายสินค้า" required>
                     </div> 
                 </div>
                 <div class="col-md-4">

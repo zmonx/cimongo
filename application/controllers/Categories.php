@@ -11,10 +11,14 @@ class Categories extends CI_Controller {
 	public function index($categoriesId)
 	{
 		$data['categories'] = $this->categories_model->findAll();
-		$condition = array(
-			'categories_id' => intval($categoriesId)
-		);
-		$data['products'] = $this->product_model->findAll($condition);
+		if($categoriesId=="all"){
+			$data['products'] = $this->product_model->findAllItem();
+		}else{
+			$condition = array(
+				'categories_id' => intval($categoriesId)
+			);
+			$data['products'] = $this->product_model->findAll($condition);
+		}
 		// print_r($data['products']);
 		// exit();
 		$this->load->view('layout/head', $data);

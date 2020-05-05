@@ -1,5 +1,13 @@
 <div class="products">
     <div class="container">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <?php if($this->session->flashdata('success-msg')){?>
             <div class="alert alert-success" role="alert">
                 บันทึกสำเร็จ
@@ -51,7 +59,7 @@
                         </tr>
                     <?php }?>    
                     </tbody>
-                    </table>
+                </table>
                 </div>
 
             </div>
