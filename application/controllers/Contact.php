@@ -8,9 +8,11 @@ class Contact extends CI_Controller {
 		$this->load->model('categories_model');
 		$this->load->model('product_model');
 		$this->load->model('contact_model');
+		$this->load->model('cart_model');
     }  
 	public function index()
 	{
+		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
 		$datacon['contact'] = $this->categories_model->findAll();
 		// $condition = array(

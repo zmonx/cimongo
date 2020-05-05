@@ -1,35 +1,27 @@
 <?php if(!defined('BASEPATH')) exit('No direct script allowed');
 
-class Product_model extends CI_Model{
+class Cart_model extends CI_Model{
 
     function __construct()
     {
         parent::__construct();
-    }
-    public function findOne($condition=[])
-    {
-        if(sizeof($condition)>0){
-            $this->mongo_db->where($condition);
-        }
-        $result = $this->mongo_db->getOne('products');
-        return $result;
     }
     public function findAll($condition=[])
     {
         if(sizeof($condition)>0){
             $this->mongo_db->where($condition);
         }
-        $result = $this->mongo_db->get('products');
+        $result = $this->mongo_db->get('cart');
         return $result;
     }
     public function insert($data)
     {
-        $insertId = $this->mongo_db->insert('products', $data);
+        $insertId = $this->mongo_db->insert('cart', $data);
         return $insertId;
     }
     public function findAllItem()
     {
-        $result = $this->mongo_db->get('products');
+        $result = $this->mongo_db->get('cart');
         return $result;
     }
 }

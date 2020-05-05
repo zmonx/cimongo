@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col">
                 <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-                    <div class="footer_logo"><a href="#">EAZY!T</a></div>
+                    <div class="footer_logo"><a href="<?php echo base_url('home') ?>">EAZY!T</a></div>
                     <div class="copyright ml-auto mr-auto">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;

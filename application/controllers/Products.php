@@ -6,9 +6,11 @@ class Products extends CI_Controller {
         parent::__construct();
         $this->load->model('product_model');
         $this->load->model('categories_model');
+        $this->load->model('cart_model');
     }
     public function index()
     {
+        $data['cart'] = $this->cart_model->findAll();
         $search = $this->input->get('search');
         $product_name = $this->input->get('product_name');
         $categories_id = $this->input->get('categories_id');

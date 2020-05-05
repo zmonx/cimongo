@@ -7,9 +7,11 @@ class Categories extends CI_Controller {
 		parent::__construct();
 		$this->load->model('categories_model');
 		$this->load->model('product_model');
+		$this->load->model('cart_model');
     }  
 	public function index($categoriesId)
 	{
+		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
 		if($categoriesId=="all"){
 			$data['products'] = $this->product_model->findAllItem();
