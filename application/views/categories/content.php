@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/categories.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart.css') ?>">
 
 <div class="home">
     <div class="home_container">
