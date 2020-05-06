@@ -1,21 +1,38 @@
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart.css') ?>">
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url(<?php echo base_url('public/images/contact.jpg')?>)"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="<?php echo base_url('home')?>">Home</a></li>
+                                    <li>Search</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
 <div class="products">
     <div class="container">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
             <form action="get">
                 <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             <div class="form-group">
                                 <input type="text" name="product_name" class="form-control" placeholder="ค้นหาด้วยชื่อสินค้า" value="<?php echo $product_name;?>">
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <select class="form-control" name="categories_id">
                                     <option value="">เลือกหมวดหมู่</option>
