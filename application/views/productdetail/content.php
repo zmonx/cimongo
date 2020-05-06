@@ -1,21 +1,26 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/product.css')?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/product_responsive.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart.css') ?>">
 	<div class="home">
-		<div class="home_container">
-			<div class="home_background" style="background-image:url(<?php echo base_url('public/images/categories.jpg')?>)"></div>
-			<div class="home_content_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="home_content">
-								<div class="home_title">Smart Phones<span>.</span></div>
-								<div class="home_text"><p>Smart Phone : โทรศัพท์ที่รองรับระบบปฏิบัติการ ต่างๆได้ เสมือนยกเอาคุณสมบัติที่ PDA และคอมพิวเตอร์มาไว้ในโทรศัพท์ เช่น iOS (ที่ลงในมือถือรุ่น Iphone) ,BlackBerry OS, Android OS , Windows phone 7 และ Symbian Os (Nokia) เป็นต้น</p></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="home_container">
+        <div class="home_background" style="background-image:url(<?php echo base_url('public/images/contact.jpg')?>)"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="<?php echo base_url('home')?>">Home</a></li>
+                                    <li><?php echo ($products[0]['product_name'])?></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	</div>
 
 	<!-- Product Details -->
@@ -103,3 +108,17 @@
 
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/product.js"></script>
+<style type="text/css">
+	.img-resize img {
+		width: 170px;
+		height: auto;
+	}
+
+	.img-resize {
+		width: 170px;
+		height: 170px;
+		overflow: hidden;
+		text-align: center;
+    }
+    
+</style>
