@@ -73,4 +73,22 @@ class Products extends CI_Controller {
             echo "error";
         }
     }
+    public function addToCart()
+    {
+        $product_id = $this->input->post('product_id');
+        $quantity = $this->input->post('quantity');
+        $data = array(
+            "product_id" => $product_id,
+            "quantity" => intval($quantity)
+        );
+        // print_r($data);
+        // exit();
+        $id = $this->cart_model->insert($data);
+        if(!empty($id)){
+            $this->session->set_flashdata('success-msg', 'Product Added');
+            redirect('cart');
+        }else{
+            echo "error";
+        }
+    }
 }

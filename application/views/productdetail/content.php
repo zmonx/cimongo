@@ -54,7 +54,8 @@
 					
 						<div class="details_text">
 						<p><?php echo ($products[0]['description'])?><br>
-					
+						<form method="post" action="<?php echo base_url('products/addToCart');?>">
+						<input type="hidden" name="product_id" class="form-control" value="<?php echo ($products[0]['product_id'])?>" >
 						</p>
 						</div>
 						<!-- <p>Canon EOS 5Ds : ใช้เซ็นเซอร์ CMOS แบบฟูลเฟรม ความละเอียด 50.6 ล้านพิกเซล </p>
@@ -63,16 +64,17 @@
 							<p>**สินค้ารับประกันศูนย์ Canon (ประเทศไทย)</p>	 -->
 						<!-- Product Quantity -->
 						<div class="product_quantity_container">
-							<div class="product_quantity clearfix">
-								<span>Qty</span>
-								<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-								<div class="quantity_buttons">
-									<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-									<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+								<div class="product_quantity clearfix">
+									<span>Qty</span>
+									<input name="quantity" id="quantity_input" type="text" pattern="[0-9]*" value="1">
+									<div class="quantity_buttons">
+										<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+										<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+									</div>
 								</div>
-							</div>
-							<!-- <div class="button cart_button"><a href="<?php echo base_url('cart')?>">Add to cart</a></div> -->
-							<button  type="submit" class="button contact_button" name=""  value=""><span> Add to cart</span></button>
+								<!-- <div class="button cart_button"><a href="<php echo base_url('cart')?>">Add to cart</a></div> -->
+								<button  type="submit" class="button contact_button"><span> Add to cart</span></button>
+						</form>
 
 						</div>
 
