@@ -9,10 +9,14 @@ class Productdetail extends CI_Controller {
 		$this->load->model('product_model');
 		$this->load->model('cart_model');
     }  
-	public function index()
+	public function index($productId)
 	{
 		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
+		$condition = array(
+			'product_id' => $productId
+		);
+		$data['products'] = $this->product_model->findAll($condition);
 		// if($categoriesId=="all"){
 		// 	$data['products'] = $this->product_model->findAllItem();
 		// }else{
