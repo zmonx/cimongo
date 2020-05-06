@@ -100,17 +100,17 @@
                         <label class="delivery_option clearfix">Next day delivery
                             <input type="radio" name="radio">
                             <span class="checkmark"></span>
-                            <span name="standard" class="delivery_price" value="150">150</span>
+                            <span class="delivery_price" >150</span>
                         </label>
                         <label class="delivery_option clearfix">Standard delivery
                             <input type="radio" name="radio">
                             <span class="checkmark"></span>
-                            <span name="standard" class="delivery_price" value="50">50</span>
+                            <span class="delivery_price" >50</span>
                         </label>
                         <label class="delivery_option clearfix">Personal pickup
                             <input type="radio" checked="checked" name="radio">
                             <span class="checkmark"></span>
-                            <span name="standard" class="delivery_price" value="0">Free</span>
+                            <span class="delivery_price" >Free</span>
                         </label>
                     </div>
                 </div>

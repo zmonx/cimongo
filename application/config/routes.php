@@ -60,6 +60,9 @@ $route['categories/(:any)'] = function ($id){
 $route['Products/(:any)'] = function ($id){
      return 'Products/index/' . $id;
 };
+$route['Search/(:any)'] = function ($id){
+     return 'Search/index/' . $id;
+};
 
 
 
