@@ -45,12 +45,13 @@
                 <?php foreach ($cart as $row) { ?>
                 <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
                     <!-- Name -->
+                    <?php $url=$row['product_id']?>
                     <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
                         <div class="cart_item_image">
                             <div><img src="<?php echo getProductPictureFromId($row['product_id']) ?>" alt=""></div>
                         </div>
                         <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="#"><?php echo getProductNameFromId($row['product_id'])?></a></div>
+                            <div class="cart_item_name"><a href="<?php echo base_url('Productdetail/'.$url)?>"><?php echo getProductNameFromId($row['product_id'])?></a></div>
                             <div class="cart_item_edit"><a href="#">Edit Product</a></div>
                         </div>
                     </div>
