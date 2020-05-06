@@ -25,7 +25,7 @@
 										</li>
 										<li><a href="<?php echo base_url('warranty/') ?>">Warranty</a></li>
 										<li><a href="<?php echo base_url('contact/') ?>">Contact</a></li>
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col-md-6">
 												<form action="get">
 													<div class="form-group">
@@ -35,7 +35,7 @@
 													</a>
 												</form>
 											</div>
-										</div>
+										</div> -->
 
 									</ul>
 
@@ -57,7 +57,7 @@
 									</div>
 									<div class="search">
 										<div class="search_icon">
-											<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 475.084 475.084" style="enable-background:new 0 0 475.084 475.084;" xml:space="preserve">
+										<a href="<?php echo base_url('search/') ?>"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 475.084 475.084" style="enable-background:new 0 0 475.084 475.084;" xml:space="preserve">
 												<g>
 													<path d="M464.524,412.846l-97.929-97.925c23.6-34.068,35.406-72.047,35.406-113.917c0-27.218-5.284-53.249-15.852-78.087
 												c-10.561-24.842-24.838-46.254-42.825-64.241c-17.987-17.987-39.396-32.264-64.233-42.826
@@ -71,7 +71,7 @@
 												c35.212,0,65.331,12.519,90.364,37.546c25.033,25.026,37.548,55.15,37.548,90.36C328.911,236.214,316.392,266.329,291.363,291.358z
 												" />
 												</g>
-											</svg>
+											</svg></a>
 										</div>
 									</div>
 									<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
