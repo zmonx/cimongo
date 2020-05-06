@@ -66,7 +66,9 @@
 									<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
 								</div>
 							</div>
-							<div class="button cart_button"><a href="<?php echo base_url('cart')?>">Add to cart</a></div>
+							<!-- <div class="button cart_button"><a href="<?php echo base_url('cart')?>">Add to cart</a></div> -->
+							<button  type="submit" class="button contact_button" name=""  value=""><span> Add to cart</span></button>
+
 						</div>
 
 						<!-- Share -->
