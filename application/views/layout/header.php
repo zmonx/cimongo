@@ -9,24 +9,36 @@
 					<div class="row">
 						<div class="col">
 							<div class="header_content d-flex flex-row align-items-center justify-content-start">
-								<div class="logo"><a href="<?php echo base_url('home')?>">EAZY!T</a></div>
+								<div class="logo"><a href="<?php echo base_url('home') ?>">EAZY!T</a></div>
 								<nav class="main_nav">
 									<ul>
 										<li class="">
-											<a href="<?php echo base_url('home')?>">Home</a>
+											<a href="<?php echo base_url('home') ?>">Home</a>
 										</li>
 										<li class="hassubs">
 											<a href="<?php echo base_url('categories/all') ?>">Categories</a>
 											<ul>
 												<?php foreach ($categories as $row) { ?>
-													<li><a href="<?php echo base_url('categories/'. $row['categories_id']) ?>"><?php echo $row['categories_name'] ?></a></li>
+													<li><a href="<?php echo base_url('categories/' . $row['categories_id']) ?>"><?php echo $row['categories_name'] ?></a></li>
 												<?php }  ?>
 											</ul>
 										</li>
 										<li><a href="<?php echo base_url('warranty/') ?>">Warranty</a></li>
 										<li><a href="<?php echo base_url('contact/') ?>">Contact</a></li>
-										
+										<div class="row">
+											<div class="col-md-6">
+												<form action="get">
+													<div class="form-group">
+															<input type="text" class="form-control" name="product_name" placeholder="ค้นหาด้วยชื่อสินค้า" value="">
+													</div>
+													<button type="submit" class="btn btn-primary"><a href="<?php echo base_url('Search/') ?>">Search</button>
+													</a>
+												</form>
+											</div>
+										</div>
+
 									</ul>
+
 								</nav>
 								<div class="header_extra ml-auto">
 									<div class="shopping_cart">
@@ -94,5 +106,5 @@
 					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
-			
+
 		</header>
