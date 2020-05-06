@@ -27,31 +27,30 @@
 				<!-- Product Image -->
 				<div class="col-lg-6">
 					<div class="details_image">
-						<div class="details_image_large"><img src="<?php echo base_url('public/images/cam1.jpg')?>" alt=""><div class="product_extra product_new"><a href="categories.html">New</a></div></div>
-						<div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
-							<div class="details_image_thumbnail active" data-image="<?php echo base_url('public/images/cam1.jpg')?>"><img src="<?php echo base_url('public/images/cam1.jpg')?>" alt=""></div>
-							<div class="details_image_thumbnail " data-image="<?php echo base_url('public/images/cam2.jpg')?>"><img src="<?php echo base_url('public/images/cam2.jpg')?>" alt=""></div>
-							<div class="details_image_thumbnail " data-image="<?php echo base_url('public/images/cam3.jpg')?>"><img src="<?php echo base_url('public/images/cam3.jpg')?>" alt=""></div>
-							<div class="details_image_thumbnail " data-image="<?php echo base_url('public/images/cam4.jpg')?>"><img src="<?php echo base_url('public/images/cam4.jpg')?>" alt=""></div>
+						<div class="details_image_large"><img src="<?php echo ($products[0]['picture'])?>" alt=""><div class="product_extra product_new"><a href="categories.html">New</a></div></div>
+						<!-- <div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
+							<div class="details_image_thumbnail active" data-image="<php echo base_url('public/images/cam1.jpg')?>"><img src="<?php echo base_url('public/images/cam1.jpg')?>" alt=""></div>
+							<div class="details_image_thumbnail " data-image="<php echo base_url('public/images/cam2.jpg')?>"><img src="<?php echo base_url('public/images/cam2.jpg')?>" alt=""></div>
+							<div class="details_image_thumbnail " data-image="<php echo base_url('public/images/cam3.jpg')?>"><img src="<?php echo base_url('public/images/cam3.jpg')?>" alt=""></div>
+							<div class="details_image_thumbnail " data-image="<php echo base_url('public/images/cam4.jpg')?>"><img src="<?php echo base_url('public/images/cam4.jpg')?>" alt=""></div>
 						
-						</div>
+						</div> -->
 					</div>
 				</div>
 
 				<!-- Product Content -->
 				<div class="col-lg-6">
 					<div class="details_content">
-						<div class="details_name">Canon EOS 5Ds</div>
-						<div class="details_discount">$75000</div>
-						<div class="details_price">$70000</div>
+						<div class="details_name"><?php echo ($products[0]['product_name'])?></div>
+						<!-- <div class="details_discount">$75000</div> -->
+						<div class="details_price"><?php echo ($products[0]['buyPrice'])?></div>
 
 						<!-- In Stock -->
 					
 						<div class="details_text">
-							<p>Canon EOS 5Ds : เซ็นเซอร์ CMOS แบบฟูลเฟรม ความละเอียด 50.6 ล้านพิกเซล <br>
-								ชิปประมวลผลภาพ Dual DIGIC 6 เซ็นเซอร์วัดแสงแบบ RGB + IR 150,000 พิกเซล 252 โซน <br>
-								* รับฟรี !! Workshop ถ่ายภาพ มูลค่าสูงสุด 20,000 บาท * <br>
-								** สินค้ารับประกันศูนย์ Canon (ประเทศไทย) **</p>
+						<p><?php echo ($products[0]['description'])?><br>
+					
+						</p>
 						</div>
 						<!-- <p>Canon EOS 5Ds : ใช้เซ็นเซอร์ CMOS แบบฟูลเฟรม ความละเอียด 50.6 ล้านพิกเซล </p>
 							<p>ชิปประมวลผลภาพ Dual DIGIC 6 เซ็นเซอร์วัดแสงแบบ RGB + IR 150,000 พิกเซล 252 โซน</p>		
@@ -88,13 +87,12 @@
 				<div class="col">
 					<div class="description_title_container">
 						<div class="description_title">Description</div>
-						<div class="reviews_title"><a href="#">Reviews <span>(1)</span></a></div>
+						
 					</div>
 					<div class="description_text">
-					<p>Canon EOS 5Ds : เซ็นเซอร์ CMOS แบบฟูลเฟรม ความละเอียด 50.6 ล้านพิกเซล <br>
-								ชิปประมวลผลภาพ Dual DIGIC 6 เซ็นเซอร์วัดแสงแบบ RGB + IR 150,000 พิกเซล 252 โซน <br>
-								* รับฟรี !! Workshop ถ่ายภาพ มูลค่าสูงสุด 20,000 บาท * <br>
-								** สินค้ารับประกันศูนย์ Canon (ประเทศไทย) **</p>
+					<p><?php echo ($products[0]['description'])?><br>
+					
+					</p>
 					</div>
 				</div>
 			</div>
