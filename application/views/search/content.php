@@ -29,13 +29,13 @@
                 <div class="row">
                         <div class="col-md-7">
                             <div class="form-group">
-                                <input type="text" name="product_name" class="form-control" placeholder="ค้นหาด้วยชื่อสินค้า" value="<?php echo $product_name;?>">
+                                <input type="text" name="product_name" class="form-control contact_input" placeholder="Search by Product name" value="<?php echo $product_name;?>">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <select class="form-control" name="categories_id">
-                                    <option value="">เลือกหมวดหมู่</option>
+                                <select class=" contact_input" name="categories_id">
+                                    <option value="">Choose Categories</option>
                                     <?php foreach ($categories as $key => $row) {?>
                                         <option value="<?php echo $row['categories_id'] ?>" <?php echo ($categories_id==$row['categories_id'])?'selected':''; ?>><?php echo $row['categories_name']?></option>
                                     <?php }?>    
@@ -43,7 +43,8 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button type="submit" name="search" class="btn btn-primary btn-block" value="search"><i class="fas fa-search"></i> ค้นหา</button>
+                        <button  type="submit" class="button contact_button"name="search"  value="search"><span><i class="fas fa-search"></i> SEARCH</span></button>
+                            <!-- <button type="submit" name="search" class="btn btn-primary btn-block" value="search"><i class="fas fa-search"></i> ค้นหา</button> -->
                         </div>
                 </div>
             </form>    
@@ -110,5 +111,6 @@
 		height: 170px;
 		overflow: hidden;
 		text-align: center;
-	}
+    }
+    
 </style>
