@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <!-- Price -->
-                    <div class="cart_item_price">฿<?php echo getProductPriceFromId($row['product_id'])?></div>
+                    <div class="cart_item_price">$<?php echo getProductPriceFromId($row['product_id'])?></div>
                     <?php $priceEach=getProductPriceFromId($row['product_id']);?>
                     <!-- Quantity -->
                     <div class="cart_item_quantity">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <!-- Total -->
-                    <div class="cart_item_total">฿<?php echo ($row['quantity']*$priceEach)?></div>
+                    <div class="cart_item_total">$<?php echo ($row['quantity']*$priceEach)?></div>
                     <?php $total += $row['quantity']*$priceEach;?>
                 </div>
                 <?php } ?>
@@ -138,7 +138,7 @@
                         <ul>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Subtotal</div>
-                                <div class="cart_total_value ml-auto">฿<?php echo ($total)?></div>
+                                <div class="cart_total_value ml-auto">$<?php echo ($total)?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Shipping</div>
@@ -146,7 +146,7 @@
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Total</div>
-                                <div class="cart_total_value ml-auto">฿<?php echo ($total)?></div>
+                                <div class="cart_total_value ml-auto">$<?php echo ($total)?></div>
                             </li>
                         </ul>
                     </div>
