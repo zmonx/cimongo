@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <!-- Price -->
-                    <div class="cart_item_price"><?php echo getProductPriceFromId($row['product_id'])?></div>
+                    <div class="cart_item_price">฿<?php echo getProductPriceFromId($row['product_id'])?></div>
                     <?php $priceEach=getProductPriceFromId($row['product_id']);?>
                     <!-- Quantity -->
                     <div class="cart_item_quantity">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <!-- Total -->
-                    <div class="cart_item_total"><?php echo ($row['quantity']*$priceEach)?></div>
+                    <div class="cart_item_total">฿<?php echo ($row['quantity']*$priceEach)?></div>
                     <?php $total += $row['quantity']*$priceEach;?>
                 </div>
                 <?php } ?>
@@ -81,7 +81,7 @@
         <div class="row row_cart_buttons">
             <div class="col">
                 <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-                    <div class="button continue_shopping_button"><a href="<?php echo base_url('categories/all') ?>">Continue shopping</a></div>
+                    <div class="button continue_shopping_button"><a href="<?php echo base_url('Search/') ?>">Continue shopping</a></div>
                     <div class="cart_buttons_right ml-lg-auto">
                         <div class="button clear_cart_button"><a href="#">Clear cart</a></div>
                         <div class="button update_cart_button"><a href="#">Update cart</a></div>
@@ -100,17 +100,17 @@
                         <label class="delivery_option clearfix">Next day delivery
                             <input type="radio" name="radio">
                             <span class="checkmark"></span>
-                            <span name="standard" class="delivery_price" value="150">150</span>
+                            <span class="delivery_price" >150</span>
                         </label>
                         <label class="delivery_option clearfix">Standard delivery
                             <input type="radio" name="radio">
                             <span class="checkmark"></span>
-                            <span name="standard" class="delivery_price" value="50">50</span>
+                            <span class="delivery_price" >50</span>
                         </label>
                         <label class="delivery_option clearfix">Personal pickup
                             <input type="radio" checked="checked" name="radio">
                             <span class="checkmark"></span>
-                            <span name="standard" class="delivery_price" value="0">Free</span>
+                            <span class="delivery_price" >Free</span>
                         </label>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                         <ul>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Subtotal</div>
-                                <div class="cart_total_value ml-auto"><?php echo ($total)?></div>
+                                <div class="cart_total_value ml-auto">฿<?php echo ($total)?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Shipping</div>
@@ -145,7 +145,7 @@
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Total</div>
-                                <div class="cart_total_value ml-auto"><?php echo ($total)?></div>
+                                <div class="cart_total_value ml-auto">฿<?php echo ($total)?></div>
                             </li>
                         </ul>
                     </div>
