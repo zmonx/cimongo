@@ -11,7 +11,6 @@
                             <div class="breadcrumbs">
                                 <ul>
                                     <li><a href="<?php echo base_url('home')?>">Home</a></li>
-                                    <li><a href="<?php echo base_url('categories/all')?>">Categories</a></li>
                                     <li>Shopping Cart</li>
                                 </ul>
                             </div>
@@ -42,7 +41,7 @@
 
                 Cart Item
                 <?php $total = 0;?>
-                <?php foreach ($cart as $row) { ?>
+                <?php if(sizeof($cart)>0){foreach ($cart as $row) { ?>
                 <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
                     <!-- Name -->
                     <?php $url=$row['product_id']?>
@@ -75,7 +74,7 @@
                     <div class="cart_item_total">$<?php echo ($row['quantity']*$priceEach)?></div>
                     <?php $total += $row['quantity']*$priceEach;?>
                 </div>
-                <?php } ?>
+                <?php } }?>
 
             </div>
         </div>
@@ -84,7 +83,7 @@
                 <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
                     <div class="button continue_shopping_button"><a href="<?php echo base_url('Search/') ?>">Continue shopping</a></div>
                     <div class="cart_buttons_right ml-lg-auto">
-                        <div class="button clear_cart_button"><a href="#">Clear cart</a></div>
+                        <div class="button clear_cart_button"><a href="<?php echo base_url('Cart/clear') ?>">Clear cart</a></div>
                         <div class="button update_cart_button"><a href="#">Update cart</a></div>
                     </div>
                 </div>

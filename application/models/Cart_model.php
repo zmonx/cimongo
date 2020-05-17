@@ -24,4 +24,8 @@ class Cart_model extends CI_Model{
         $result = $this->mongo_db->get('cart');
         return $result;
     }
+    public function clearCart()
+    {
+        $this->mongo_db->deleteAll('cart');
+    }
 }
