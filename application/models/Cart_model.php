@@ -1,14 +1,15 @@
-<?php if(!defined('BASEPATH')) exit('No direct script allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script allowed');
 
-class Cart_model extends CI_Model{
+class Cart_model extends CI_Model
+{
 
     function __construct()
     {
         parent::__construct();
     }
-    public function findAll($condition=[])
+    public function findAll($condition = [])
     {
-        if(sizeof($condition)>0){
+        if (sizeof($condition) > 0) {
             $this->mongo_db->where($condition);
         }
         $result = $this->mongo_db->get('cart');
@@ -27,5 +28,11 @@ class Cart_model extends CI_Model{
     public function clearCart()
     {
         $this->mongo_db->deleteAll('cart');
+    }
+    public function clearsomeCart($product_id)
+    {
+        $this->mongo_db->where('product_id', $product_id);
+        $this->mongo_db->delete('cart');
+        // $this->mongo_db->deleteAll('cart');
     }
 }
