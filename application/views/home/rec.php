@@ -1,9 +1,10 @@
+<br><br><br><br>
 <div class="products">
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h3 id="rec"> Recommend</h3>
-					<h4 id="rec1"> _________________________________________________________</h4>
+					<h3 id="rec"> Recommend</h3><br><br>
+					<h4 id="rec1"> _________________________________________________________</h4><br><br><br><br>
 					<style>
 						#rec{
 							font-family: 'Poppins', sans-serif;

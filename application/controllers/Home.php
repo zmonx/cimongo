@@ -24,6 +24,7 @@ class Home extends CI_Controller {
 		$this->load->view('layout/menu');
 		$this->load->view('home/content');
 		$this->load->view('home/ads');
+		$this->load->view('home/rec');
 		$this->load->view('layout/support');
 		$this->load->view('layout/footer');
 	
