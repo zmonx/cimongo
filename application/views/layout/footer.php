@@ -16,7 +16,6 @@
 <script src="<?php echo base_url('public/js/contact.js') ?>"></script>
 <script src="<?php echo base_url('public/js/custom.js') ?>"></script>
 
-<script src=<?php echo base_url('https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA') ?>></script>
 
 
 </body>

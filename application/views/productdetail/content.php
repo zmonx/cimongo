@@ -11,7 +11,7 @@
 						<div class="home_content">
 							<div class="breadcrumbs">
 								<ul>
-									<li><a href="<?php echo base_url('home') ?>">Home</a></li>
+									
 									<li><?php echo ($products[0]['product_name']) ?></li>
 								</ul>
 							</div>
@@ -32,6 +32,7 @@
 			<!-- Product Image -->
 			<div class="col-lg-6">
 				<div class="details_image">
+				
 					<div class="details_image_large"><img src="<?php echo ($products[0]['picture']) ?>" alt="">
 						<div class="product_extra product_new"><a href="categories.html">New</a></div>
 					</div>
@@ -60,11 +61,7 @@
 								<input type="hidden" name="product_id" class="form-control" value="<?php echo ($products[0]['product_id']) ?>">
 						</p>
 					</div>
-					<!-- <p>Canon EOS 5Ds : ใช้เซ็นเซอร์ CMOS แบบฟูลเฟรม ความละเอียด 50.6 ล้านพิกเซล </p>
-							<p>ชิปประมวลผลภาพ Dual DIGIC 6 เซ็นเซอร์วัดแสงแบบ RGB + IR 150,000 พิกเซล 252 โซน</p>		
-							<p>*รับฟรี !! Workshop ถ่ายภาพ มูลค่าสูงสุด 20,000 บาท </p>
-							<p>**สินค้ารับประกันศูนย์ Canon (ประเทศไทย)</p>	 -->
-					<!-- Product Quantity -->
+				
 					<div class="product_quantity_container">
 						<div class="product_quantity clearfix">
 							<span>Qty</span>
@@ -75,7 +72,7 @@
 							</div>
 						</div>
 						<!-- <div class="button cart_button"><a href="<php echo base_url('cart')?>">Add to cart</a></div> -->
-						<button type="submit" class="button contact_button"><span> Add to cart</span></button>
+						<button type="submit" class="button contact_button"><span><strong>Add to cart</strong> </span></button>
 						</form>
 
 					</div>

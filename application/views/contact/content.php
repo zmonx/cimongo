@@ -56,7 +56,7 @@
 									<label for="contact_textarea">Message*</label>
 									<textarea name="message" class="contact_input contact_textarea" required></textarea>
 								</div>
-								<button  type="submit" class="button contact_button"><span>Send Message</span></button>
+								<button  type="submit" class="button contact_button"><span><strong>Send Message</strong></span></button>
 								<!-- <p class="text-center"><button type="submit" class="btn btn-success"><i class="far fa-save"></i>  บันทึก</button></p> -->
 
 							</form>

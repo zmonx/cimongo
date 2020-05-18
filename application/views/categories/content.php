@@ -64,7 +64,6 @@
 								</div>
 						</div>
 					<?php } ?>
-					<a href="<?php echo base_url('home') ?>">Home</a>
 
 				</div>
 				<div class="product_pagination">
