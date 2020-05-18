@@ -145,11 +145,11 @@
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Shipping</div>
-                                <div class="order_list_value ml-auto"> ฿0<span id="display"></div>
+                                <div class="order_list_value ml-auto"> ฿ <?php echo $test['display1']?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Total</div>
-                                <div class="order_list_value ml-auto">฿<?php echo $subtotal?></div>
+                                <div class="order_list_value ml-auto">฿ <?php echo $test['total1']?></div>
                             </li>
                         </ul>
                     </div>

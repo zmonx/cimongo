@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Cart extends CI_Controller
 {
 	function __construct()
@@ -66,10 +65,10 @@ class Cart extends CI_Controller
 		
 		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
-<<<<<<< HEAD
+
 		$data['test'] = $this->cart_model->get_form_post();
 		// print_r($data);
-=======
+
 		$this->load->view('layout/head');
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/menu');
@@ -117,7 +116,7 @@ class Cart extends CI_Controller
 
 		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
->>>>>>> cc670ab64a800a078b4b6534c88b9c991958adf0
+
 		$this->load->view('layout/head');
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/menu');
