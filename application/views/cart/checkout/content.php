@@ -12,8 +12,8 @@
                         <div class="home_content">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                    <li><a href="<?php echo base_url('home') ?>">Home</a></li>
+                                    <li><a href="<?php echo base_url('cart') ?>">Shopping Cart</a></li>
                                     <li>Checkout</li>
                                 </ul>
                             </div>
