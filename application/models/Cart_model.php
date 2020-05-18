@@ -35,4 +35,9 @@ class Cart_model extends CI_Model
         $this->mongo_db->delete('cart');
         // $this->mongo_db->deleteAll('cart');
     }
+
+    public function get_form_post()
+    {
+        return $this->input->post();
+    }
 }
