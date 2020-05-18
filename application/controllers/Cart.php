@@ -64,7 +64,9 @@ class Cart extends CI_Controller
 	{
 		
 		$data['cart'] = $this->cart_model->findAll();
-		$data['categories'] = $this->categories_model->findAll();	
+		$data['categories'] = $this->categories_model->findAll();
+		$data['test'] = $this->cart_model->get_form_post();
+		// print_r($data);
 		$this->load->view('layout/head');
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/menu');

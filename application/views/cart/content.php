@@ -92,7 +92,8 @@
                 </div>
             </div>
         </div>
-        <br><br><br><br><br><hr>
+        <br><br><br><br><br>
+        <hr>
         <div class="row row_extra">
             <div class="col-lg-4">
 
@@ -113,7 +114,7 @@
                                 <span class="delivery_price">50</span>
                             </label>
                             <label class="delivery_option clearfix">Personal pickup
-                                <input type="radio" name="radioName" id="radios"  value="0">
+                                <input type="radio" name="radioName" id="radios" value="0" checked="checked">
                                 <span class="checkmark"></span>
                                 <span class="delivery_price">Free</span>
                             </label>
@@ -129,7 +130,7 @@
                     <div class="coupon_form_container">
                         <form action="#" id="coupon_form" class="coupon_form">
                             <input type="text" class="coupon_input" required="required" style="display:none;">
-                            <button class="button coupon_button"style="display:none;"></button>
+                            <button class="button coupon_button" style="display:none;"></button>
                         </form>
                     </div>
                 </div>
@@ -140,23 +141,28 @@
                     <div class="section_title">Cart total</div>
                     <div class="section_subtitle">Final info</div>
                     <?php $shipPrice = 0; ?>
-                    <div class="cart_total_container">
-                        <ul>
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="cart_total_title">Subtotal</div>
-                                <div class="cart_total_value ml-auto">฿ <?php echo ($total) ?></div>
-                            </li>
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="cart_total_title">Shipping</div>
-                                <div class="cart_total_value ml-auto"> ฿ <span id="display"></span> </div>
-                            </li>
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="cart_total_title">Total</div>
-                                <div class="cart_total_value ml-auto">฿ <span id="total"></span></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="button checkout_button"><a href="<?php echo base_url('Cart/checkout/') ?>">Proceed to checkout</a></div>
+                    <form action="<?php echo base_url('Cart/checkout/') ?>" method="post">
+                        <div class="cart_total_container">
+                            <ul>
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_total_title">Subtotal</div>
+                                    <div class="cart_total_value ml-auto">฿ <?php echo ($total) ?></div>
+                                </li>
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_total_title">Shipping</div>
+                                    <div class="cart_total_value ml-auto"> ฿ <span id="display"></span> <input style="display: none" type="text" id="display1" name="display1"> </div>
+                                </li>
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_total_title">Total</div>
+                                    <div class="cart_total_value ml-auto">฿ <span id="total"></span> <input style="display: none" type="text" id="total1" name="total1"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div><button class="button checkout_button" type="submit"><i class="fas fa-search"></i> SEARCH</span>Proceed to checkout</button></div> -->
+                       <div> <button class="button contact_button buttons " type="submit"><span> Proceed to checkout</span></button></div>
+                        
+
+                    </form>
                 </div>
             </div>
         </div>
@@ -164,14 +170,26 @@
 </div>
 <script>
     $(document).ready(function() {
+        var radioValue = $("input[name='radioName']:checked").val();
+        $('#display').text(radioValue);
+        $('#display1').val(radioValue);
+        var shipping = parseInt(radioValue);
+        var subtotal = parseInt(<?php echo ($total) ?>);
+        var total = subtotal + shipping;
+        $('#total').text(total);
+        $('#total1').val(total);
+
         $("input[type='radio']").click(function() {
             var radioValue = $("input[name='radioName']:checked").val();
 
             $('#display').text(radioValue);
+            $('#display1').val(radioValue);
             var shipping = parseInt(radioValue);
             var subtotal = parseInt(<?php echo ($total) ?>);
             var total = subtotal + shipping;
             $('#total').text(total);
+            $('#total1').val(total);
+
         });
     });
 
@@ -188,3 +206,14 @@
     // var total = subtotal + shipping;
     // $('#total').text(total);
 </script>
+<style>
+    .buttons {
+    width: 555px;
+    height: 56px;
+    background: none;
+    text-align: center;
+    border: solid 2px #1b1b1b;
+    overflow: hidden;
+    cursor: pointer;
+}
+</style>
