@@ -62,8 +62,12 @@ class Cart extends CI_Controller
 	}
 	public function checkout()
 	{
-		
+
 		$data['cart'] = $this->cart_model->findAll();
+		$cart = $data['cart'];
+		if (sizeof($cart) == 0) {
+			redirect('cart');
+		}
 		$data['categories'] = $this->categories_model->findAll();
 
 		$data['test'] = $this->cart_model->get_form_post();
@@ -80,54 +84,56 @@ class Cart extends CI_Controller
 		$data['categories'] = $this->categories_model->findAll();
 		$data['cart'] = $this->cart_model->findAll();
 		$cart = $data['cart'];
-		If(sizeof($cart)==0){
-		redirect('cart');
+		if (sizeof($cart) == 0) {
+			redirect('cart');
 		}
+		// print_r(sizeof($cart));
+		// exit();
 		$data['customer'] = $this->customer_model->findAll();
 		$customer = $data['customer'];
-        $checkout_name = $this->input->post('checkout_name');
-        $checkout_last_name = $this->input->post('checkout_last_name');
-        $checkout_country = $this->input->post('checkout_country');
-        $checkout_address = $this->input->post('checkout_address');
-        $checkout_zipcode = $this->input->post('checkout_zipcode');
-        $checkout_province = $this->input->post('checkout_province');
-        $checkout_phone = $this->input->post('checkout_phone');
-        $checkout_email = $this->input->post('checkout_email');
-        $checkout_city = $this->input->post('checkout_city');
+		$checkout_name = $this->input->post('checkout_name');
+		$checkout_last_name = $this->input->post('checkout_last_name');
+		$checkout_country = $this->input->post('checkout_country');
+		$checkout_address = $this->input->post('checkout_address');
+		$checkout_zipcode = $this->input->post('checkout_zipcode');
+		$checkout_province = $this->input->post('checkout_province');
+		$checkout_phone = $this->input->post('checkout_phone');
+		$checkout_email = $this->input->post('checkout_email');
+		$checkout_city = $this->input->post('checkout_city');
 		$quantity = $this->input->post('quantity');
-		if(sizeof($customer)==0){
+		if (sizeof($customer) == 0) {
 			$customer_id = 1;
-		}else{
-			$customer_id = sizeof($customer)+1;
+		} else {
+			$customer_id = sizeof($customer) + 1;
 		}
-        $dataCustomer = array(
+		$dataCustomer = array(
 			"customer_id" => $customer_id,
-            "firstName" => $checkout_name,
-            "lastName" =>  $checkout_last_name,
-            "country" => $checkout_country,
-            "address" => $checkout_address,
-            "zipcode" => $checkout_zipcode,
-            "city" => $checkout_city,
-            "province" => $checkout_province,
-            "phone" => $checkout_phone,
-            "email" => $checkout_email
+			"firstName" => $checkout_name,
+			"lastName" =>  $checkout_last_name,
+			"country" => $checkout_country,
+			"address" => $checkout_address,
+			"zipcode" => $checkout_zipcode,
+			"city" => $checkout_city,
+			"province" => $checkout_province,
+			"phone" => $checkout_phone,
+			"email" => $checkout_email
 		);
 		$id = $this->customer_model->insert($dataCustomer);
-		
+
 		// print_r(sizeof($cart));
 		// exit();
 		$data['test'] = $this->cart_model->get_form_post();
 		$total = $data['test'];
 		$shipping = $total['display1'];
 		$dataDetail = new SplFixedArray(sizeof($cart));
-		for($x = 0; $x < sizeof($cart); $x++) {
+		for ($x = 0; $x < sizeof($cart); $x++) {
 			$data['order'] = $this->customer_model->findAllOrder();
 			$order = $data['order'];
-			if(sizeof($order)==0){
+			if (sizeof($order) == 0) {
 				$order_id = 1;
-			}else{
-				$order_id = sizeof($order)+1;
-			} 
+			} else {
+				$order_id = sizeof($order) + 1;
+			}
 			$dataDetail[$x] = array(
 				"product_id" =>  $cart[$x]['product_id'],
 				"buyPrice" => $cart[$x]['buyPrice'],
@@ -144,10 +150,10 @@ class Cart extends CI_Controller
 
 		$data['payment'] = $this->customer_model->findAllPayment();
 		$payment = $data['payment'];
-		if(sizeof($payment)==0){
+		if (sizeof($payment) == 0) {
 			$checkNumber = 1;
-		}else{
-			$checkNumber = sizeof($payment)+1;
+		} else {
+			$checkNumber = sizeof($payment) + 1;
 		}
 		$data['test'] = $this->cart_model->get_form_post();
 		$total = $data['test'];
@@ -159,10 +165,10 @@ class Cart extends CI_Controller
 		$pd = $this->customer_model->insertPayment($dataPayment);
 
 
-		if(!empty($pd)){
+		if (!empty($pd)) {
 			$this->session->set_flashdata('success-msg', 'Customer Added');
 			redirect('cart');
-		}else{
+		} else {
 			echo "error";
 		}
 
