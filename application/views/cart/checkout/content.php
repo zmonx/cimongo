@@ -42,55 +42,55 @@
                     <div class="section_title">Billing Address</div>
                     <div class="section_subtitle">Enter your address info</div>
                     <div class="checkout_form_container">
-                        <form action="<?php echo base_url('products/checkout');?>" id="checkout_form" class="checkout_form" method="post" >
+                        <form action="<?php echo base_url('cart/placeorder');?>" id="checkout_form" class="checkout_form" method="post" >
                             <div class="row">
                                 <div class="col-xl-6">
                                     <!-- Name -->
                                     <label for="checkout_name">First Name*</label>
-                                    <input type="text" id="checkout_name" class="checkout_input" required="required">
+                                    <input type="text" name="checkout_name" class="checkout_input" required="required">
                                 </div>
                                 <div class="col-xl-6 last_name_col">
                                     <!-- Last Name -->
                                     <label for="checkout_last_name">Last Name*</label>
-                                    <input type="text" id="checkout_last_name" class="checkout_input" required="required">
+                                    <input type="text" name="checkout_last_name" class="checkout_input" required="required">
                                 </div>
                             </div>
                             <div>
                                 <!-- Country -->
                                 <label for="checkout_country">Country*</label>
-                                <input type="text" id="checkout_country" class="checkout_input" required="required">
+                                <input type="text" name="checkout_country" class="checkout_input" required="required">
                             </div>
                             <div>
                                 <!-- Address -->
                                 <label for="checkout_address">Address*</label>
-                                <input type="text" id="checkout_address" class="checkout_input" required="required">
+                                <input type="text" name="checkout_address" class="checkout_input" required="required">
                             </div>
                             <div>
                                 <!-- Zipcode -->
                                 <label for="checkout_zipcode">Zipcode*</label>
-                                <input type="text" id="checkout_zipcode" class="checkout_input" required="required">
+                                <input type="text" name="checkout_zipcode" class="checkout_input" required="required">
                             </div>
                             <div>
                                 <!-- City / Town -->
                                 <label for="checkout_city">City/Town*</label>
-                                <input type="text" id="checkout_city" class="checkout_input" required="required">
+                                <input type="text" name="checkout_city" class="checkout_input" required="required">
 
                             </div>
                             <div>
                                 <!-- Province -->
                                 <label for="checkout_province">Province*</label>
-                                <input type="text" id="checkout_province" class="checkout_input" required="required">
+                                <input type="text" name="checkout_province" class="checkout_input" required="required">
 
                             </div>
                             <div>
                                 <!-- Phone no -->
                                 <label for="checkout_phone">Phone no*</label>
-                                <input type="phone" id="checkout_phone" class="checkout_input" required="required">
+                                <input type="phone" name="checkout_phone" class="checkout_input" required="required">
                             </div>
                             <div>
                                 <!-- Email -->
                                 <label for="checkout_email">Email Address*</label>
-                                <input type="phone" id="checkout_email" class="checkout_input" required="required">
+                                <input type="phone" name="checkout_email" class="checkout_input" required="required">
                             </div>
                             <!-- <div class="checkout_extra">
                                 <div>
@@ -178,7 +178,9 @@
 
                     <!-- Order Text -->
                     <div class="order_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra temp or so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</div>
-                    <div class="button order_button"><a href="#">Place Order</a></div>
+                    <button  type="submit" class="button contact_button" form="checkout_form"><span> place order</span></button>
+                    <!-- <div type="submit" class="button order_button" form="checkout_form">Place Order</a></div> -->
+                    <!-- <a href="#"> -->
                 </div>
             </div>
         </div>
