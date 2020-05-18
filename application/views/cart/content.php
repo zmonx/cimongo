@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/contact.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart.css') ?>">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div class="home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url('public/images/cart.jpg') ?>)"></div>
@@ -99,23 +101,26 @@
                     <div class="section_title">Shipping method</div>
                     <div class="section_subtitle">Select the one you want</div>
                     <div class="delivery_options">
-                        <label class="delivery_option clearfix">Next day delivery
-                            <input type="radio" name="radio">
-                            <span class="checkmark"></span>
-                            <span class="delivery_price">150</span>
-                        </label>
-                        <label class="delivery_option clearfix">Standard delivery
-                            <input type="radio" name="radio">
-                            <span class="checkmark"></span>
-                            <span class="delivery_price">50</span>
-                        </label>
-                        <label class="delivery_option clearfix">Personal pickup
-                            <input type="radio" checked="checked" name="radio">
-                            <span class="checkmark"></span>
-                            <span class="delivery_price">Free</span>
-                        </label>
+                        <form id="myForm">
+                            <label class="delivery_option clearfix">Next day delivery
+                                <input type="radio" name="radioName" value="150">
+                                <span class="checkmark"></span>
+                                <span class="delivery_price">150</span>
+                            </label>
+                            <label class="delivery_option clearfix">Standard delivery
+                                <input type="radio" name="radioName" value="50">
+                                <span class="checkmark"></span>
+                                <span class="delivery_price">50</span>
+                            </label>
+                            <label class="delivery_option clearfix">Personal pickup
+                                <input type="radio" name="radioName" value="0">
+                                <span class="checkmark"></span>
+                                <span class="delivery_price">Free</span>
+                            </label>
+                        </form>
                     </div>
                 </div>
+
 
                 <!-- Coupon Code -->
                 <div class="coupon">
@@ -139,15 +144,15 @@
                         <ul>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Subtotal</div>
-                                <div class="cart_total_value ml-auto">$<?php echo ($total) ?></div>
+                                <div class="cart_total_value ml-auto">฿ <?php echo ($total) ?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Shipping</div>
-                                <div class="cart_total_value ml-auto">Free</div>
+                                <div class="cart_total_value ml-auto"> ฿ <span id="display"></span> </div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Total</div>
-                                <div class="cart_total_value ml-auto">$<?php echo ($total) ?></div>
+                                <div class="cart_total_value ml-auto">฿ <?php echo ($total) ?></div>
                             </li>
                         </ul>
                     </div>
@@ -157,3 +162,46 @@
         </div>
     </div>
 </div>
+<!-- <script>
+      $(()=>{
+        shipping();
+      });
+
+    function shipping(){
+
+        switch(this.id){
+            case "nextday": 
+                var i =  parseInt("150");
+                $("#ship").text(i);
+                break;
+            case "standard":
+                var i = parseInt("100");
+                $("#ship").text(i);
+                break;
+            case "free":
+                $("#ship").text("Free");
+                break;
+        }
+            }
+
+</script> -->
+
+<script>
+    $(document).ready(function() {
+        $("input[type='radio']").click(function() {
+            var radioValue = $("input[name='radioName']:checked").val();
+            $('#display').text(radioValue);
+            // alert(radioValue);
+        });
+    });
+
+    
+
+
+    // $(document).ready(function() {
+    //     $('myForm input').on('change', function() {
+    //         var display = $("[type='radio']:checked").val();
+    //         $('#display').text($("[type='radio']:checked").val());
+    //     });
+    // });
+</script>

@@ -48,7 +48,7 @@
 					<div class="details_content">
 						<div class="details_name"><?php echo ($products[0]['product_name'])?></div>
 						<!-- <div class="details_discount">$75000</div> -->
-						<div class="details_price"><?php echo ($products[0]['buyPrice'])?></div>
+						<div class="details_price">฿ <?php echo ($products[0]['buyPrice'])?></div>
 
 						<!-- In Stock -->
 					
