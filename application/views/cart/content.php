@@ -92,6 +92,7 @@
                 </div>
             </div>
         </div>
+        <br><br><br><br><br><hr>
         <div class="row row_extra">
             <div class="col-lg-4">
 
@@ -123,12 +124,12 @@
 
                 <!-- Coupon Code -->
                 <div class="coupon">
-                    <div class="section_title">Coupon code</div>
-                    <div class="section_subtitle">Enter your coupon code</div>
+                    <div class="section_title"></div>
+                    <div class="section_subtitle"></div>
                     <div class="coupon_form_container">
                         <form action="#" id="coupon_form" class="coupon_form">
-                            <input type="text" class="coupon_input" required="required">
-                            <button class="button coupon_button"><span>Apply</span></button>
+                            <input type="text" class="coupon_input" required="required" style="display:none;">
+                            <button class="button coupon_button"style="display:none;"></button>
                         </form>
                     </div>
                 </div>
