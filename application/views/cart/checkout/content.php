@@ -1,7 +1,12 @@
 <!-- Home -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/contact.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/checkout.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/checkout_responsive.css') ?>">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="<?php echo base_url('public/styles/js/checkout.js')?>"></script>
+
 <div class="home">
     <div class="home_container">
         <div class="home_background" style="background-image:url(<?php echo base_url('public/images/cart.jpg') ?>)"></div>
@@ -53,19 +58,12 @@
                             <div>
                                 <!-- Country -->
                                 <label for="checkout_country">Country*</label>
-                                <select name="checkout_country" id="checkout_country" class="dropdown_item_select checkout_input" require="required">
-                                    <option></option>
-                                    <option>Lithuania</option>
-                                    <option>Sweden</option>
-                                    <option>UK</option>
-                                    <option>Italy</option>
-                                </select>
+                                <input type="text" id="checkout_country" class="checkout_input" required="required">
                             </div>
                             <div>
                                 <!-- Address -->
                                 <label for="checkout_address">Address*</label>
                                 <input type="text" id="checkout_address" class="checkout_input" required="required">
-                                <input type="text" id="checkout_address_2" class="checkout_input checkout_address_2" required="required">
                             </div>
                             <div>
                                 <!-- Zipcode -->
@@ -75,24 +73,14 @@
                             <div>
                                 <!-- City / Town -->
                                 <label for="checkout_city">City/Town*</label>
-                                <select name="checkout_city" id="checkout_city" class="dropdown_item_select checkout_input" require="required">
-                                    <option></option>
-                                    <option>City</option>
-                                    <option>City</option>
-                                    <option>City</option>
-                                    <option>City</option>
-                                </select>
+                                <input type="text" id="checkout_city" class="checkout_input" required="required">
+
                             </div>
                             <div>
                                 <!-- Province -->
                                 <label for="checkout_province">Province*</label>
-                                <select name="checkout_province" id="checkout_province" class="dropdown_item_select checkout_input" require="required">
-                                    <option></option>
-                                    <option>Province</option>
-                                    <option>Province</option>
-                                    <option>Province</option>
-                                    <option>Province</option>
-                                </select>
+                                <input type="text" id="checkout_province" class="checkout_input" required="required">
+
                             </div>
                             <div>
                                 <!-- Phone no -->
@@ -104,7 +92,7 @@
                                 <label for="checkout_email">Email Address*</label>
                                 <input type="phone" id="checkout_email" class="checkout_input" required="required">
                             </div>
-                            <div class="checkout_extra">
+                            <!-- <div class="checkout_extra">
                                 <div>
                                     <input type="checkbox" id="checkbox_terms" name="regular_checkbox" class="regular_checkbox" checked="checked">
                                     <label for="checkbox_terms"><img src="images/check.png" alt=""></label>
@@ -120,7 +108,7 @@
                                     <label for="checkbox_newsletter"><img src="images/check.png" alt=""></label>
                                     <span class="checkbox_title">Subscribe to our newsletter</span>
                                 </div>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                 </div>
