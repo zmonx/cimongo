@@ -88,7 +88,6 @@
                     <div class="button continue_shopping_button"><a href="<?php echo base_url('Search/') ?>">Continue shopping</a></div>
                     <div class="cart_buttons_right ml-lg-auto">
                         <div class="button clear_cart_button"><a href="<?php echo base_url('Cart/clear') ?>">Clear cart</a></div>
-                        <div class="button update_cart_button"><a href="#">Update cart</a></div>
                     </div>
                 </div>
             </div>
