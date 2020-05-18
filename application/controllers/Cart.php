@@ -116,23 +116,27 @@ class Cart extends CI_Controller
 		$data['test'] = $this->cart_model->get_form_post();
 		$total = $data['test'];
 		$shipping = $total['display1'];
+		$dataDetail = new SplFixedArray(sizeof($cart));
 		for($x = 0; $x < sizeof($cart); $x++) {
 			$data['order'] = $this->customer_model->findAllOrder();
 			$order = $data['order'];
 			if(sizeof($order)==0){
 				$order_id = 1;
 			}else{
-				$order_id = sizeof($customer)+1;
+				$order_id = sizeof($order)+1;
 			} 
-		 	$dataOrder = array(
-				"order_id" => $order_id,
-				"customer_id" => $customer_id,
+			$dataDetail[$x] = array(
 				"product_id" =>  $cart[$x]['product_id'],
-				"shipping" => $shipping,
 				"quantity" => $cart[$x]['quantity']
 			);
-			$oid = $this->customer_model->insertOrder($dataOrder);
 		};
+		$dataOrder = array(
+			"order_id" => $order_id,
+			"shipping" => $shipping,
+			"customer_id" => $customer_id,
+			"orderdetails" => $dataDetail
+		);
+		$oid = $this->customer_model->insertOrder($dataOrder);
 
 		$data['payment'] = $this->customer_model->findAllPayment();
 		$payment = $data['payment'];
@@ -149,6 +153,8 @@ class Cart extends CI_Controller
 			"amount" =>  $total['total1']
 		);
 		$pd = $this->customer_model->insertPayment($dataPayment);
+
+
 		if(!empty($pd)){
 			$this->session->set_flashdata('success-msg', 'Customer Added');
 			redirect('cart');
