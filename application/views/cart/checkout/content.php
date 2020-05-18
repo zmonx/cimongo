@@ -136,22 +136,22 @@
                                 <?php for ($x = 0; $x < $row['quantity']; $x++) { ?>
                                     <li class="d-flex flex-row align-items-center justify-content-start">
                                         <div class="order_list_title"> <?php echo getProductNameFromId($row['product_id']); ?></div>
-                                        <div class="order_list_value ml-auto"><?php echo getProductPriceFromId($row['product_id']) ?></div>
+                                        <div class="order_list_value ml-auto">$ <?php echo getProductPriceFromId($row['product_id']) ?></div>
                                     </li>
                                 <?php } ?>
                                 <?php $subtotal += getProductPriceFromId($row['product_id']) * ($row['quantity']) ?>
                             <?php } ?>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Subtotal</div>
-                                <div class="order_list_value ml-auto">฿<?php echo number_format($subtotal) ?></div>
+                                <div class="order_list_value ml-auto">$ <?php echo number_format($subtotal) ?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Shipping</div>
-                                <div class="order_list_value ml-auto"> ฿ <?php echo number_format($test['display1']) ?></div>
+                                <div class="order_list_value ml-auto"> $ <?php echo number_format($test['display1']) ?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Total</div>
-                                <div class="order_list_value ml-auto">฿ <?php echo number_format($test['total1']) ?></div>
+                                <div class="order_list_value ml-auto">$ <?php echo number_format($test['total1']) ?></div>
                             </li>
                         </ul>
                     </div>
@@ -180,7 +180,7 @@
 
                     <!-- Order Text -->
                     <div class="order_text"> </div>
-                    <button type="submit" class="button contact_button" form="checkout_form"><span> place order</span></button>
+                    <button  type="submit" class="button contact_button buttons" form="checkout_form"><span> place order</span></button>
                     <!-- <div type="submit" class="button order_button" form="checkout_form">Place Order</a></div> -->
                     <!-- <a href="#"> -->
                 </div>
@@ -188,3 +188,14 @@
         </div>
     </div>
 </div>
+<style>
+    .buttons {
+    width: 441px;
+    height: 60px;
+    background: none;
+    text-align: center;
+    border: solid 2px #1b1b1b;
+    overflow: hidden;
+    cursor: pointer;
+}
+</style>

@@ -59,7 +59,7 @@
                             </div>
                             <!-- Price -->
                             <?php $x = getProductPriceFromId($row['product_id']) ?>
-                            <div class="cart_item_price">฿ <?php echo number_format($x) ?></div>
+                            <div class="cart_item_price">$ <?php echo number_format($x) ?></div>
                             <?php $priceEach = getProductPriceFromId($row['product_id']); ?>
                             <!-- Quantity -->
                             <div class="cart_item_quantity">
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <!-- Total -->
-                            <div class="cart_item_total">฿ <?php echo number_format($row['quantity'] * $priceEach) ?></div>
+                            <div class="cart_item_total">$ <?php echo number_format($row['quantity'] * $priceEach) ?></div>
                             <?php $total += $row['quantity'] * $priceEach; ?>
                         </div>
                 <?php }
@@ -147,15 +147,15 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto">฿ <?php echo number_format($total) ?></div>
+                                    <div class="cart_total_value ml-auto">$ <?php echo number_format($total) ?></div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Shipping</div>
-                                    <div class="cart_total_value ml-auto"> ฿ <span id="display"></span> <input style="display: none" type="text" id="display1" name="display1"> </div>
+                                    <div class="cart_total_value ml-auto"> $ <span id="display"></span> <input style="display: none" type="text" id="display1" name="display1"> </div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Total</div>
-                                    <div class="cart_total_value ml-auto">฿ <span id="total"></span> <input style="display: none" type="text" id="total1" name="total1"></div>
+                                    <div class="cart_total_value ml-auto">$ <span id="total"></span> <input style="display: none" type="text" id="total1" name="total1"></div>
                                 </li>
                             </ul>
                         </div>
