@@ -109,6 +109,8 @@
                                     <span class="checkbox_title">Subscribe to our newsletter</span>
                                 </div>
                             </div> -->
+                            <input style="display: none" type="number" id="total1" name="total1" value="<?php echo (int)$test['total1']?>">
+                            <input style="display: none" type="number" id="total1" name="display1" value="<?php echo (int)$test['display1']?>">
                         </form>
                     </div>
                 </div>

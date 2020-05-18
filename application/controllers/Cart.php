@@ -113,6 +113,9 @@ class Cart extends CI_Controller
 		
 		// print_r(sizeof($cart));
 		// exit();
+		$data['test'] = $this->cart_model->get_form_post();
+		$total = $data['test'];
+		$shipping = $total['display1'];
 		for($x = 0; $x < sizeof($cart); $x++) {
 			$data['order'] = $this->customer_model->findAllOrder();
 			$order = $data['order'];
@@ -125,6 +128,7 @@ class Cart extends CI_Controller
 				"order_id" => $order_id,
 				"customer_id" => $customer_id,
 				"product_id" =>  $cart[$x]['product_id'],
+				"shipping" => $shipping,
 				"quantity" => $cart[$x]['quantity']
 			);
 			$oid = $this->customer_model->insertOrder($dataOrder);
@@ -137,10 +141,12 @@ class Cart extends CI_Controller
 		}else{
 			$checkNumber = sizeof($payment)+1;
 		}
+		$data['test'] = $this->cart_model->get_form_post();
+		$total = $data['test'];
 		$dataPayment = array(
 			"checkNumber" => $checkNumber,
 			"customer_id" => $customer_id,
-			"amount" =>  10000
+			"amount" =>  $total['total1']
 		);
 		$pd = $this->customer_model->insertPayment($dataPayment);
 		if(!empty($pd)){
