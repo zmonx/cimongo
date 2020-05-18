@@ -77,8 +77,11 @@ class Cart extends CI_Controller
 	}
 	public function placeorder()
 	{
+		$data['categories'] = $this->categories_model->findAll();
 		$data['cart'] = $this->cart_model->findAll();
 		$cart = $data['cart'];
+		$data['customer'] = $this->customer_model->findAll();
+		$customer = $data['customer'];
         $checkout_name = $this->input->post('checkout_name');
         $checkout_last_name = $this->input->post('checkout_last_name');
         $checkout_country = $this->input->post('checkout_country');
@@ -88,9 +91,14 @@ class Cart extends CI_Controller
         $checkout_phone = $this->input->post('checkout_phone');
         $checkout_email = $this->input->post('checkout_email');
         $checkout_city = $this->input->post('checkout_city');
-        
-        $quantity = $this->input->post('quantity');
-        $data = array(
+		$quantity = $this->input->post('quantity');
+		if(sizeof($customer)==0){
+			$customer_id = 1;
+		}else{
+			$customer_id = sizeof($customer)+1;
+		}
+        $dataCustomer = array(
+			"customer_id" => $customer_id,
             "firstName" => $checkout_name,
             "lastName" =>  $checkout_last_name,
             "country" => $checkout_country,
@@ -100,19 +108,53 @@ class Cart extends CI_Controller
             "province" => $checkout_province,
             "phone" => $checkout_phone,
             "email" => $checkout_email
-        );
-        print_r($cart);
-        exit();
-		$id = $this->customer_model->insert($data);
-        if(!empty($id)){
-             $this->session->set_flashdata('success-msg', 'Customer Added');
-             redirect('cart');
-        }else{
-            echo "error";
-		}
+		);
+		$id = $this->customer_model->insert($dataCustomer);
+		
+		// print_r(sizeof($cart));
+		// exit();
+		$data['test'] = $this->cart_model->get_form_post();
+		$total = $data['test'];
+		$shipping = $total['display1'];
+		for($x = 0; $x < sizeof($cart); $x++) {
+			$data['order'] = $this->customer_model->findAllOrder();
+			$order = $data['order'];
+			if(sizeof($order)==0){
+				$order_id = 1;
+			}else{
+				$order_id = sizeof($customer)+1;
+			} 
+		 	$dataOrder = array(
+				"order_id" => $order_id,
+				"customer_id" => $customer_id,
+				"product_id" =>  $cart[$x]['product_id'],
+				"shipping" => $shipping,
+				"quantity" => $cart[$x]['quantity']
+			);
+			$oid = $this->customer_model->insertOrder($dataOrder);
+		};
 
-		$oid = $this->customer_model->order($data);
-		$data['customer'] = $this->customer_model->findOne();
+		$data['payment'] = $this->customer_model->findAllPayment();
+		$payment = $data['payment'];
+		if(sizeof($payment)==0){
+			$checkNumber = 1;
+		}else{
+			$checkNumber = sizeof($payment)+1;
+		}
+		$data['test'] = $this->cart_model->get_form_post();
+		$total = $data['test'];
+		$dataPayment = array(
+			"checkNumber" => $checkNumber,
+			"customer_id" => $customer_id,
+			"amount" =>  $total['total1']
+		);
+		$pd = $this->customer_model->insertPayment($dataPayment);
+		if(!empty($pd)){
+			$this->session->set_flashdata('success-msg', 'Customer Added');
+			redirect('cart');
+		}else{
+			echo "error";
+		}
 
 		$data['cart'] = $this->cart_model->findAll();
 		$data['categories'] = $this->categories_model->findAll();
