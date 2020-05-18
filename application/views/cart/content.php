@@ -155,7 +155,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="button checkout_button"><a href="#">Proceed to checkout</a></div>
+                    <div class="button checkout_button"><a href="<?php echo base_url('Cart/checkout') ?>">Proceed to checkout</a></div>
                 </div>
             </div>
         </div>

@@ -60,4 +60,15 @@ class Cart extends CI_Controller
 		$this->load->view('cart/content');
 		$this->load->view('layout/footer');
 	}
+	public function checkout()
+	{
+		
+		$data['cart'] = $this->cart_model->findAll();
+		$data['categories'] = $this->categories_model->findAll();
+		$this->load->view('layout/head');
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/menu');
+		$this->load->view('cart/checkout/content');
+		$this->load->view('layout/footer');
+	}
 }
