@@ -131,11 +131,13 @@
                         <ul class="order_list">
                             <?php $subtotal = 0?>
                             <?php foreach ($cart as $row) { ?>
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="order_list_title"><?php echo getProductNameFromId($row['product_id']) ;?></div>
-                                <div class="order_list_value ml-auto"><?php echo getProductPriceFromId($row['product_id']) ?></div>
+                                <?php for($x = 0; $x < $row['quantity']; $x++) { ?>
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="order_list_title"><?php echo getProductNameFromId($row['product_id']) ;?></div>
+                                    <div class="order_list_value ml-auto"><?php echo getProductPriceFromId($row['product_id']) ?></div>
+                                </li>
+                                <?php } ?>
                                 <?php $subtotal += getProductPriceFromId($row['product_id'])*($row['quantity']) ?>
-                            </li>
                             <?php }?>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Subtotal</div>
