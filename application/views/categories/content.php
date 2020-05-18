@@ -60,7 +60,7 @@
 								<div class="product_extra product_sale"><a href="categories.php">Sale</a></div>
 								<div class="product_content">
 									<div class="product_title"><a href="<?php echo base_url('Productdetail/' . $url) ?>"><?php echo $row['product_name'] ?></div>
-									<div class="product_price">$ <?php echo number_format($row['buyPrice']) ?></div>
+									<div class="product_price">$ <?php echo $row['buyPrice'] ?></div>
 								</div>
 						</div>
 					<?php } ?>
