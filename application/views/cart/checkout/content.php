@@ -177,7 +177,7 @@
                     </div>
 
                     <!-- Order Text -->
-                    <div class="order_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra temp or so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</div>
+                    <div class="order_text"> </div>
                     <button  type="submit" class="button contact_button" form="checkout_form"><span> place order</span></button>
                     <!-- <div type="submit" class="button order_button" form="checkout_form">Place Order</a></div> -->
                     <!-- <a href="#"> -->
