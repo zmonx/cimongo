@@ -112,7 +112,7 @@
                                 <span class="delivery_price">50</span>
                             </label>
                             <label class="delivery_option clearfix">Personal pickup
-                                <input type="radio" name="radioName" value="0">
+                                <input type="radio" name="radioName" checked="checked" value="0">
                                 <span class="checkmark"></span>
                                 <span class="delivery_price">Free</span>
                             </label>
@@ -151,7 +151,7 @@
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Total</div>
-                                <div class="cart_total_value ml-auto">฿ <?php echo ($total) ?></div>
+                                <div class="cart_total_value ml-auto">฿ <span id="total"></div>
                             </li>
                         </ul>
                     </div>
@@ -185,14 +185,21 @@
 
 </script> -->
 
-<script>
+
+    <script>
     $(document).ready(function() {
         $("input[type='radio']").click(function() {
             var radioValue = $("input[name='radioName']:checked").val();
             $('#display').text(radioValue);
-            // alert(radioValue);
+            var shipping = parseInt(radioValue);
+            var subtotal = parseInt(<?php echo ($total) ?>);
+            var total = subtotal+shipping;
+            $('#total').text(total);
         });
+
+        
     });
+
 
     
 
