@@ -156,7 +156,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="button checkout_button"><a href="<?php echo base_url('Cart/checkout') ?>">Proceed to checkout</a></div>
+                    <div class="button checkout_button"><a href="<?php echo base_url('Cart/checkout/') ?>">Proceed to checkout</a></div>
                 </div>
             </div>
         </div>
@@ -184,7 +184,7 @@
 
     // $('#display').text(radioValue);
     // var shipping = parseInt(radioValue);
-    // var subtotal = parseInt(<?php echo ($total) ?>);
+    // var subtotal = parseInt(<php echo ($total) ?>);
     // var total = subtotal + shipping;
     // $('#total').text(total);
 </script>

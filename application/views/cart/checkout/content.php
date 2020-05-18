@@ -42,7 +42,7 @@
                     <div class="section_title">Billing Address</div>
                     <div class="section_subtitle">Enter your address info</div>
                     <div class="checkout_form_container">
-                        <form action="<?php echo base_url('products/save');?>" id="checkout_form" class="checkout_form" method="post" >
+                        <form action="<?php echo base_url('products/checkout');?>" id="checkout_form" class="checkout_form" method="post" >
                             <div class="row">
                                 <div class="col-xl-6">
                                     <!-- Name -->
@@ -129,21 +129,25 @@
                             <div class="order_list_value ml-auto">Total</div>
                         </div>
                         <ul class="order_list">
+                            <?php $subtotal = 0?>
+                            <?php foreach ($cart as $row) { ?>
                             <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="order_list_title">Cocktail Yellow dress</div>
-                                <div class="order_list_value ml-auto">$59.90</div>
+                                <div class="order_list_title"><?php echo getProductNameFromId($row['product_id']) ;?></div>
+                                <div class="order_list_value ml-auto"><?php echo getProductPriceFromId($row['product_id']) ?></div>
+                                <?php $subtotal += getProductPriceFromId($row['product_id'])*($row['quantity']) ?>
                             </li>
+                            <?php }?>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Subtotal</div>
-                                <div class="order_list_value ml-auto">฿</div>
+                                <div class="order_list_value ml-auto">฿<?php echo $subtotal?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Shipping</div>
-                                <div class="order_list_value ml-auto"> ฿<span id="display"></div>
+                                <div class="order_list_value ml-auto"> ฿0<span id="display"></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Total</div>
-                                <div class="order_list_value ml-auto">฿</div>
+                                <div class="order_list_value ml-auto">฿<?php echo $subtotal?></div>
                             </li>
                         </ul>
                     </div>
