@@ -16,7 +16,7 @@
 					</div>
 					<div class="avds_small_content">
 						<div class="avds_title">Smart Phones</div>
-						<div class="avds_link"><a href="categories.html">See More</a></div>
+						<div class="avds_link"><a href=<?php echo base_url('categories/3') ?>>See More</></div>
 					</div>
 				</div>
 			</div>
@@ -25,8 +25,8 @@
 				<div class="avds_large_container">
 					<div class="avds_large_content">
 						<div class="avds_title">Professional Cameras</div>
-						<div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
-						<div class="avds_link avds_link_large"><a href="categories.html">See More</a></div>
+						<div class="avds_text">offers the most comprehensive, informative, and factually accurate digital camera information available anywhere. Unparalleled in its thoroughness, the Imaging Resource is the perfect place to market your digital imaging products.</div>
+						<div class="avds_link avds_link_large"><a href=<?php echo base_url('categories/6') ?>>See More</a></div>
 					</div>
 				</div>
 			</div>
