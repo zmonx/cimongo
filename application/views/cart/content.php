@@ -58,7 +58,8 @@
                                 </div>
                             </div>
                             <!-- Price -->
-                            <div class="cart_item_price">฿ <?php echo getProductPriceFromId($row['product_id']) ?></div>
+                            <?php $x = getProductPriceFromId($row['product_id']) ?>
+                            <div class="cart_item_price">฿ <?php echo number_format($x) ?></div>
                             <?php $priceEach = getProductPriceFromId($row['product_id']); ?>
                             <!-- Quantity -->
                             <div class="cart_item_quantity">
@@ -74,7 +75,7 @@
                                 </div>
                             </div>
                             <!-- Total -->
-                            <div class="cart_item_total">฿ <?php echo ($row['quantity'] * $priceEach) ?></div>
+                            <div class="cart_item_total">฿ <?php echo number_format($row['quantity'] * $priceEach) ?></div>
                             <?php $total += $row['quantity'] * $priceEach; ?>
                         </div>
                 <?php }
@@ -146,7 +147,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto">฿ <?php echo ($total) ?></div>
+                                    <div class="cart_total_value ml-auto">฿ <?php echo number_format($total) ?></div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Shipping</div>
@@ -159,8 +160,8 @@
                             </ul>
                         </div>
                         <!-- <div><button class="button checkout_button" type="submit"><i class="fas fa-search"></i> SEARCH</span>Proceed to checkout</button></div> -->
-                       <div> <button class="button contact_button buttons " type="submit"><span> Proceed to checkout</span></button></div>
-                        
+                        <div> <button class="button contact_button buttons " type="submit"><span> Proceed to checkout</span></button></div>
+
 
                     </form>
                 </div>
@@ -208,12 +209,12 @@
 </script>
 <style>
     .buttons {
-    width: 555px;
-    height: 56px;
-    background: none;
-    text-align: center;
-    border: solid 2px #1b1b1b;
-    overflow: hidden;
-    cursor: pointer;
-}
+        width: 555px;
+        height: 56px;
+        background: none;
+        text-align: center;
+        border: solid 2px #1b1b1b;
+        overflow: hidden;
+        cursor: pointer;
+    }
 </style>

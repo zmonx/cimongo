@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/checkout_responsive.css') ?>">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="<?php echo base_url('public/styles/js/checkout.js')?>"></script>
+<script src="<?php echo base_url('public/styles/js/checkout.js') ?>"></script>
 
 <div class="home">
     <div class="home_container">
@@ -42,7 +42,7 @@
                     <div class="section_title">Billing Address</div>
                     <div class="section_subtitle">Enter your address info</div>
                     <div class="checkout_form_container">
-                        <form action="<?php echo base_url('cart/placeorder');?>" id="checkout_form" class="checkout_form" method="post" >
+                        <form action="<?php echo base_url('cart/placeorder'); ?>" id="checkout_form" class="checkout_form" method="post">
                             <div class="row">
                                 <div class="col-xl-6">
                                     <!-- Name -->
@@ -129,27 +129,27 @@
                             <div class="order_list_value ml-auto">Total</div>
                         </div>
                         <ul class="order_list">
-                            <?php $subtotal = 0?>
+                            <?php $subtotal = 0 ?>
                             <?php foreach ($cart as $row) { ?>
-                                <?php for($x = 0; $x < $row['quantity']; $x++) { ?>
-                                <li class="d-flex flex-row align-items-center justify-content-start">
-                                    <div class="order_list_title"><?php echo getProductNameFromId($row['product_id']) ;?></div>
-                                    <div class="order_list_value ml-auto"><?php echo getProductPriceFromId($row['product_id']) ?></div>
-                                </li>
+                                <?php for ($x = 0; $x < $row['quantity']; $x++) { ?>
+                                    <li class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="order_list_title"> <?php echo getProductNameFromId($row['product_id']); ?></div>
+                                        <div class="order_list_value ml-auto"><?php echo getProductPriceFromId($row['product_id']) ?></div>
+                                    </li>
                                 <?php } ?>
-                                <?php $subtotal += getProductPriceFromId($row['product_id'])*($row['quantity']) ?>
-                            <?php }?>
+                                <?php $subtotal += getProductPriceFromId($row['product_id']) * ($row['quantity']) ?>
+                            <?php } ?>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Subtotal</div>
-                                <div class="order_list_value ml-auto">฿<?php echo $subtotal?></div>
+                                <div class="order_list_value ml-auto">฿<?php echo number_format($subtotal) ?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Shipping</div>
-                                <div class="order_list_value ml-auto"> ฿ <?php echo $test['display1']?></div>
+                                <div class="order_list_value ml-auto"> ฿ <?php echo number_format($test['display1']) ?></div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Total</div>
-                                <div class="order_list_value ml-auto">฿ <?php echo $test['total1']?></div>
+                                <div class="order_list_value ml-auto">฿ <?php echo number_format($test['total1']) ?></div>
                             </li>
                         </ul>
                     </div>
@@ -178,7 +178,7 @@
 
                     <!-- Order Text -->
                     <div class="order_text"> </div>
-                    <button  type="submit" class="button contact_button" form="checkout_form"><span> place order</span></button>
+                    <button type="submit" class="button contact_button" form="checkout_form"><span> place order</span></button>
                     <!-- <div type="submit" class="button order_button" form="checkout_form">Place Order</a></div> -->
                     <!-- <a href="#"> -->
                 </div>

@@ -1,25 +1,25 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/styles/cart.css') ?>">
 
 <div class="home">
-    <div class="home_container">
-        <div class="home_background" style="background-image:url(<?php echo base_url('public/images/contact.jpg')?>)"></div>
-        <div class="home_content_container">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="home_content">
-                            <div class="breadcrumbs">
-                                <ul>
-                                    <li><a href="<?php echo base_url('home')?>">Home</a></li>
-                                    <li>Categories</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="home_container">
+		<div class="home_background" style="background-image:url(<?php echo base_url('public/images/contact.jpg') ?>)"></div>
+		<div class="home_content_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="<?php echo base_url('home') ?>">Home</a></li>
+									<li>Categories</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="products">
 	<div class="container">
@@ -49,22 +49,22 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				
+
 				<div class="product_grid">
 					<!-- Product -->
 					<?php foreach ($products as $row) { ?>
-						<?php $url=$row['product_id']?>
+						<?php $url = $row['product_id'] ?>
 						<div class="product">
-						    <a href="<?php echo base_url('Productdetail/'.$url)?>">
-							<div class="product_image img-resize"><img src="<?php echo $row['picture']?>" alt=""></div>
-							<div class="product_extra product_sale"><a href="categories.php">Sale</a></div>
-							<div class="product_content">
-								<div class="product_title"><a href="<?php echo base_url('Productdetail/'.$url)?>"><?php echo $row['product_name'] ?></div>
-								<div class="product_price">฿ <?php echo $row['buyPrice'] ?></div>
-							</div>
+							<a href="<?php echo base_url('Productdetail/' . $url) ?>">
+								<div class="product_image img-resize"><img src="<?php echo $row['picture'] ?>" alt=""></div>
+								<div class="product_extra product_sale"><a href="categories.php">Sale</a></div>
+								<div class="product_content">
+									<div class="product_title"><a href="<?php echo base_url('Productdetail/' . $url) ?>"><?php echo $row['product_name'] ?></div>
+									<div class="product_price">฿ <?php echo number_format($row['buyPrice']) ?></div>
+								</div>
 						</div>
 					<?php } ?>
-					<a href="<?php echo base_url('home')?>">Home</a>
+					<a href="<?php echo base_url('home') ?>">Home</a>
 
 				</div>
 				<div class="product_pagination">
