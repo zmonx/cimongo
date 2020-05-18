@@ -160,7 +160,7 @@
                             </ul>
                         </div>
                         <!-- <div><button class="button checkout_button" type="submit"><i class="fas fa-search"></i> SEARCH</span>Proceed to checkout</button></div> -->
-                        <div> <button class="button contact_button buttons " type="submit"><span> Proceed to checkout</span></button></div>
+                        <div> <button class="button contact_button buttons " type="submit"><span><strong> Proceed to checkout</strong></span></button></div>
 
 
                     </form>
@@ -210,7 +210,7 @@
 <style>
     .buttons {
         width: 555px;
-        height: 56px;
+        height: 65px;
         background: none;
         text-align: center;
         border: solid 2px #1b1b1b;
