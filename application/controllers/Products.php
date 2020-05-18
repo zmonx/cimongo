@@ -77,9 +77,11 @@ class Products extends CI_Controller {
     {
         $product_id = $this->input->post('product_id');
         $quantity = $this->input->post('quantity');
+        $buyPrice = $this->input->post('buyPrice');
         $data = array(
             "product_id" => $product_id,
-            "quantity" => intval($quantity)
+            "quantity" => intval($quantity),
+            "buyPrice" => intval($buyPrice)
         );
         // print_r($data);
         // exit();

@@ -127,6 +127,7 @@ class Cart extends CI_Controller
 			} 
 			$dataDetail[$x] = array(
 				"product_id" =>  $cart[$x]['product_id'],
+				"buyPrice" => $cart[$x]['buyPrice'],
 				"quantity" => $cart[$x]['quantity']
 			);
 		};
