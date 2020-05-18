@@ -54,5 +54,35 @@ class Contact extends CI_Controller {
         }else{
             echo "error";
         }
-    }
+	}
+	public function subscribe()
+	{
+		//55
+		$data['cart'] = $this->cart_model->findAll();
+		$data['categories'] = $this->categories_model->findAll();
+		$data['emails'] = $this->contact_model->findEmail();
+		$emails = $data['emails'];
+		$email = $this->contact_model->get_form_post();
+		for($x = 0; $x < sizeof($emails); $x++) {
+			if($email['email'] == $emails[$x]['email']){
+				print_r("Duplicate");
+				redirect('home');
+			};
+		};
+		$em = $this->contact_model->insertEmail($email);
+		if(!empty($em)){
+			$this->session->set_flashdata('success-msg', 'Customer Added');
+			redirect('home');
+		}else{
+			echo "error";
+		}
+		$this->load->view('layout/head');
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/menu');
+		$this->load->view('home/content');
+		$this->load->view('home/ads');
+		$this->load->view('home/rec');
+		$this->load->view('home/support');
+		$this->load->view('layout/footer');
+	}
 }

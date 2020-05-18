@@ -24,4 +24,18 @@ class Contact_model extends CI_Model{
         $result = $this->mongo_db->get('contact');
         return $result;
     }
+    public function insertEmail($data)
+    {
+        $insertId = $this->mongo_db->insert('emails', $data);
+        return $insertId;
+    }
+    public function findEmail()
+    {
+        $result = $this->mongo_db->get('emails');
+        return $result;
+    }
+    public function get_form_post()
+    {
+        return $this->input->post();
+    }
 }

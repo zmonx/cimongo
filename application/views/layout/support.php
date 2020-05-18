@@ -56,9 +56,9 @@
 						<div class="newsletter_title">Subscribe to our newsletter</div>
 						<div class="newsletter_text"><p>กดติดตามเพื่อรับข่าวสารเพิ่มเติม เพื่อที่ท่านจะได้ไม่พลาดข่าวสารใหม่จากทางเรา</p></div>
 						<div class="newsletter_form_container">
-							<form action="#" id="newsletter_form" class="newsletter_form">
-								<input type="email" class="newsletter_input" required="required">
-								<button class="newsletter_button trans_200"><span>Subscribe</span></button>
+							<form method="post" action="<?php echo base_url('Contact/subscribe');?>" name="newsletter_form" class="newsletter_form">
+								<input name="email" type="email" class="newsletter_input" required="required">
+								<button type = "submit" class="newsletter_button trans_200"><span>Subscribe</span></button>
 							</form>
 						</div>
 					</div>
