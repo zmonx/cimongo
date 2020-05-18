@@ -112,7 +112,7 @@
                                 <span class="delivery_price">50</span>
                             </label>
                             <label class="delivery_option clearfix">Personal pickup
-                                <input type="radio" name="radioName" checked="checked" value="0">
+                                <input type="radio" name="radioName" id="radios"  value="0">
                                 <span class="checkmark"></span>
                                 <span class="delivery_price">Free</span>
                             </label>
@@ -151,7 +151,7 @@
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="cart_total_title">Total</div>
-                                <div class="cart_total_value ml-auto">฿ <span id="total"></div>
+                                <div class="cart_total_value ml-auto">฿ <span id="total"></span></div>
                             </li>
                         </ul>
                     </div>
@@ -161,53 +161,29 @@
         </div>
     </div>
 </div>
-<!-- <script>
-      $(()=>{
-        shipping();
-      });
-
-    function shipping(){
-
-        switch(this.id){
-            case "nextday": 
-                var i =  parseInt("150");
-                $("#ship").text(i);
-                break;
-            case "standard":
-                var i = parseInt("100");
-                $("#ship").text(i);
-                break;
-            case "free":
-                $("#ship").text("Free");
-                break;
-        }
-            }
-
-</script> -->
-
-
-    <script>
+<script>
     $(document).ready(function() {
         $("input[type='radio']").click(function() {
             var radioValue = $("input[name='radioName']:checked").val();
+
             $('#display').text(radioValue);
             var shipping = parseInt(radioValue);
             var subtotal = parseInt(<?php echo ($total) ?>);
-            var total = subtotal+shipping;
+            var total = subtotal + shipping;
             $('#total').text(total);
         });
-
-        
     });
 
-
-    
-
-
-    // $(document).ready(function() {
-    //     $('myForm input').on('change', function() {
-    //         var display = $("[type='radio']:checked").val();
-    //         $('#display').text($("[type='radio']:checked").val());
-    //     });
+    // $("#myForm").load(function() {
+    //     // Handler for .load() called.
+    //     alert("dfsdfs");
     // });
+    // // var radioValue = $("input[name='radioName']:checked").val();
+    // var radioValue = 0;
+
+    // $('#display').text(radioValue);
+    // var shipping = parseInt(radioValue);
+    // var subtotal = parseInt(<?php echo ($total) ?>);
+    // var total = subtotal + shipping;
+    // $('#total').text(total);
 </script>
