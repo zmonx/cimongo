@@ -80,6 +80,9 @@ class Cart extends CI_Controller
 		$data['categories'] = $this->categories_model->findAll();
 		$data['cart'] = $this->cart_model->findAll();
 		$cart = $data['cart'];
+		If(sizeof($cart)==0){
+		redirect('cart');
+		}
 		$data['customer'] = $this->customer_model->findAll();
 		$customer = $data['customer'];
         $checkout_name = $this->input->post('checkout_name');
