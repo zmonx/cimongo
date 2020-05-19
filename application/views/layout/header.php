@@ -52,7 +52,15 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z" />
 												</g>
 											</svg>
-											<div>Cart <span>(<?php echo sizeof($cart) ?>)</span></div>
+											<?php $count = 0;?>
+											<?php
+											if (sizeof($cart) > 0) {  
+												foreach ($cart as $row) {
+													$count+=$row['quantity'];
+												};
+											}
+											?>
+											<div>Cart <span>(<?php echo $count ?>)</span></div>
 										</a>
 									</div>
 									<div class="search">
