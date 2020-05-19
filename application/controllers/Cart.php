@@ -140,9 +140,11 @@ class Cart extends CI_Controller
 				"quantity" => $cart[$x]['quantity']
 			);
 		};
+		$orderdate = date("Y/m/d");
 		$dataOrder = array(
 			"order_id" => $order_id,
 			"shipping" => $shipping,
+			"order_date" => $orderdate,
 			"customer_id" => $customer_id,
 			"orderdetails" => $dataDetail
 		);
@@ -159,6 +161,7 @@ class Cart extends CI_Controller
 		$total = $data['test'];
 		$dataPayment = array(
 			"checkNumber" => $checkNumber,
+			"order_id" => $order_id,
 			"customer_id" => $customer_id,
 			"amount" =>  $total['total1']
 		);

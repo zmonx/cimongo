@@ -180,7 +180,7 @@
 
                     <!-- Order Text -->
                     <div class="order_text"> </div>
-                    <button  type="submit" class="button contact_button buttons" form="checkout_form"><span> <strong>place order </strong></span></button>
+                    <button  type="submit" class="button contact_button buttons" form="checkout_form"><span> <strong> place order </strong></span></button>
                     <!-- <div type="submit" class="button order_button" form="checkout_form">Place Order</a></div> -->
                     <!-- <a href="#"> -->
                 </div>
