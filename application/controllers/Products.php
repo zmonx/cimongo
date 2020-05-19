@@ -40,7 +40,7 @@ class Products extends CI_Controller {
     {
         $data['categories'] = $this->categories_model->findAll();
         $this->load->view('layout/head');
-		$this->load->view('layout/header');
+		// $this->load->view('layout/header');
 		$this->load->view('layout/menu');
         // $this->load->view('layout/home');
 		$this->load->view('products/create/content',$data);
@@ -54,6 +54,7 @@ class Products extends CI_Controller {
         $categories_id = $this->input->post('categories_id');
         $quantityInStock = $this->input->post('quantityInStock');
         $description = $this->input->post('description');
+        $picture = $this->input->post('picture');
 
         $data = array(
             "product_id" => $product_id,
@@ -61,7 +62,8 @@ class Products extends CI_Controller {
             "buyPrice" => intval($buyPrice),
             "categories_id" => intval($categories_id),
             "quantityInStock" => intval($quantityInStock),
-            "description" => $description
+            "description" => $description,
+            "picture" => $picture
         );
         // print_r($data);
         // exit();

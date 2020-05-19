@@ -52,6 +52,12 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
+                        <label>รูปสินค้า</label><span class="text-danger">*</span>
+                        <input type="text" name="picture" class="form-control" placeholder="รูปสินค้า" required>
+                    </div> 
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
                         <label>จำนวน</label><span class="text-danger">*</span>
                         <input type="number" name="quantityInStock"  class="form-control" placeholder="จำนวน" min="0" required>
                     </div> 
