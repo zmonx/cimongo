@@ -166,7 +166,7 @@ class Cart extends CI_Controller
 			"amount" =>  $total['total1']
 		);
 		$pd = $this->customer_model->insertPayment($dataPayment);
-
+		$this->cart_model->clearCart();
 
 		if (!empty($pd)) {
 			$this->session->set_flashdata('success-msg', 'Customer Added');
