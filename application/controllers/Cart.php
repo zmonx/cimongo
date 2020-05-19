@@ -170,7 +170,7 @@ class Cart extends CI_Controller
 
 		if (!empty($pd)) {
 			$this->session->set_flashdata('success-msg', 'Customer Added');
-			redirect('cart');
+			redirect('cart/confirm/'.$order_id);
 		} else {
 			echo "error";
 		}
@@ -184,4 +184,52 @@ class Cart extends CI_Controller
 		$this->load->view('cart/checkout/content');
 		$this->load->view('layout/footer');
 	}
+
+
+	
+	
+	
+		public function confirm($orderId)
+		{
+	
+			$data['cart'] = $this->cart_model->findAll();
+			$data['categories'] = $this->categories_model->findAll();
+			$data['orderId'] = $orderId;
+			$condition = array(
+				'order_id' => (int)$orderId
+			);
+			$data['order'] = $this->customer_model->findOrderOne($condition);
+			// $data['test'] = $this->cart_model->get_form_post();
+			$product =  $data['order'];
+			$item = $product[0]['orderdetails'];
+			// $all[0] = $item[0];
+			// $dataProduct = [];
+			// print_r($all[0]);
+			// exit();
+			
+			for ($x = 0; $x < sizeof($item); $x++) {
+				$all[$x] = $item[$x];
+				$p = $all[$x]['product_id'];
+				$b = $all[$x]['buyPrice'];
+				$q = $all[$x]['quantity'];
+				$dataProduct['items'][$x] = array(
+					"product_id" =>  $p,
+					"buyPrice" => $b,
+					"quantity" => $q
+				);
+			};
+		// print_r($dataProduct);
+		// exit();
+	
+			
+			$this->load->view('layout/head',$dataProduct);
+			$this->load->view('layout/header', $data);
+			$this->load->view('layout/menu');
+			$this->load->view('cart/checkout/placeorder/content',$data);
+			$this->load->view('layout/footer');
+
+
+
+	}
+
 }

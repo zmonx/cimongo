@@ -7,6 +7,7 @@ class Customer_model extends CI_Model
     {
         parent::__construct();
     }
+
     public function findAll($condition = [])
     {
         if (sizeof($condition) > 0) {
@@ -15,6 +16,7 @@ class Customer_model extends CI_Model
         $result = $this->mongo_db->get('customers');
         return $result;
     }
+
     public function findAllPayment($condition = [])
     {
         if (sizeof($condition) > 0) {
@@ -24,6 +26,14 @@ class Customer_model extends CI_Model
         return $result;
     }
     public function findAllOrder($condition = [])
+    {
+        if (sizeof($condition) > 0) {
+            $this->mongo_db->where($condition);
+        }
+        $result = $this->mongo_db->get('order');
+        return $result;
+    }
+    public function findOrderOne($condition = [])
     {
         if (sizeof($condition) > 0) {
             $this->mongo_db->where($condition);
