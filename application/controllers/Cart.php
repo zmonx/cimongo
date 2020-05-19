@@ -125,7 +125,7 @@ class Cart extends CI_Controller
 		$data['test'] = $this->cart_model->get_form_post();
 		$total = $data['test'];
 		$shipping = $total['display1'];
-		$dataDetail = new SplFixedArray(sizeof($cart));
+		$dataDetail = [];
 		for ($x = 0; $x < sizeof($cart); $x++) {
 			$data['order'] = $this->customer_model->findAllOrder();
 			$order = $data['order'];
