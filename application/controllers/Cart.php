@@ -143,7 +143,7 @@ class Cart extends CI_Controller
 		$orderdate = date("Y/m/d");
 		$dataOrder = array(
 			"order_id" => $order_id,
-			"shipping" => $shipping,
+			"shipping" => (int)$shipping,
 			"order_date" => $orderdate,
 			"customer_id" => $customer_id,
 			"orderdetails" => $dataDetail
