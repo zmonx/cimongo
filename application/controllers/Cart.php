@@ -163,7 +163,7 @@ class Cart extends CI_Controller
 			"checkNumber" => $checkNumber,
 			"order_id" => $order_id,
 			"customer_id" => $customer_id,
-			"amount" =>  $total['total1']
+			"amount" =>  (int)$total['total1']
 		);
 		$pd = $this->customer_model->insertPayment($dataPayment);
 		$this->cart_model->clearCart();
