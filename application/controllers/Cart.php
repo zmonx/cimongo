@@ -227,6 +227,8 @@ class Cart extends CI_Controller
 			$this->load->view('layout/menu');
 			$this->load->view('cart/checkout/placeorder/content',$data);
 			$this->load->view('layout/footer');
+			$this->load->view('layout/sup');
+
 
 
 
